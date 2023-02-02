@@ -153,7 +153,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-12 col-md-5 offset-1 position-relative">
+                    <div class="col-12 col-md-5 offset-0 offset-md-1 position-relative">
                         <img class="position-absolute" style="top: 0; right: -250px; scale: 1.6; opacity: 0.2;"
                             src="{{ asset('images/refukids-shape.svg') }}" alt="">
                         <p class="text-justify">Olá! Bem vindos! Estamos iniciando um novo tempo na Refukids. Nosso dever e
