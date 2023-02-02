@@ -5799,6 +5799,7 @@ blockquote .position {
 
 .instagram-item img {
 	position: absolute;
+	object-fit: cover;
 	top: 50%;
 	left: 50%;
 	width: auto;

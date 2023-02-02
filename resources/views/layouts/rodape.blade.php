@@ -15,38 +15,110 @@
                 <ul class="instafeed instagram-gallery" data-lightgallery="group">
                     <li>
                         <a class="instagram-item" data-lightgallery="item"
-                            href="images/insta-gallery-1-1200x800-original.jpg">
-                            <img src="images/insta-gallery-1-72x72.jpg" alt="" width="72" height="72" />
+                            href="images/galeria/galeria (1).jpeg">
+                            <img src="images/galeria/galeria (1).jpeg" alt="" width="72" height="72" />
                         </a>
                     </li>
                     <li>
                         <a class="instagram-item" data-lightgallery="item"
-                            href="images/insta-gallery-2-1200x800-original.jpg">
-                            <img src="images/insta-gallery-2-72x72.jpg" alt="" width="72" height="72" />
+                            href="images/galeria/galeria (2).jpeg">
+                            <img src="images/galeria/galeria (2).jpeg" alt="" width="72" height="72" />
                         </a>
                     </li>
                     <li>
                         <a class="instagram-item" data-lightgallery="item"
-                            href="images/insta-gallery-3-1200x800-original.jpg">
-                            <img src="images/insta-gallery-3-72x72.jpg" alt="" width="72" height="72" />
+                            href="images/galeria/galeria (3).jpeg">
+                            <img src="images/galeria/galeria (3).jpeg" alt="" width="72" height="72" />
                         </a>
                     </li>
                     <li>
                         <a class="instagram-item" data-lightgallery="item"
-                            href="images/insta-gallery-4-1200x800-original.jpg">
-                            <img src="images/insta-gallery-4-72x72.jpg" alt="" width="72" height="72" />
+                            href="images/galeria/galeria (4).jpeg">
+                            <img src="images/galeria/galeria (4).jpeg" alt="" width="72" height="72" />
                         </a>
                     </li>
                     <li>
                         <a class="instagram-item" data-lightgallery="item"
-                            href="images/insta-gallery-5-1200x800-original.jpg">
-                            <img src="images/insta-gallery-5-72x72.jpg" alt="" width="72" height="72" />
+                            href="images/galeria/galeria (5).jpeg">
+                            <img src="images/galeria/galeria (5).jpeg" alt="" width="72" height="72" />
                         </a>
                     </li>
                     <li>
                         <a class="instagram-item" data-lightgallery="item"
-                            href="images/insta-gallery-6-1200x800-original.jpg">
-                            <img src="images/insta-gallery-6-72x72.jpg" alt="" width="72" height="72" />
+                            href="images/galeria/galeria (6).jpeg">
+                            <img src="images/galeria/galeria (6).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (7).jpeg">
+                            <img src="images/galeria/galeria (7).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (8).jpeg">
+                            <img src="images/galeria/galeria (8).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (9).jpeg">
+                            <img src="images/galeria/galeria (9).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (10).jpeg">
+                            <img src="images/galeria/galeria (10).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (11).jpeg">
+                            <img src="images/galeria/galeria (11).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (12).jpeg">
+                            <img src="images/galeria/galeria (12).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (13).jpeg">
+                            <img src="images/galeria/galeria (13).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (14).jpeg">
+                            <img src="images/galeria/galeria (14).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (15).jpeg">
+                            <img src="images/galeria/galeria (15).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (16).jpeg">
+                            <img src="images/galeria/galeria (16).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (17).jpeg">
+                            <img src="images/galeria/galeria (17).jpeg" alt="" width="72" height="72" />
+                        </a>
+                    </li>
+                    <li class="d-none">
+                        <a class="instagram-item" data-lightgallery="item"
+                            href="images/galeria/galeria (18).jpeg">
+                            <img src="images/galeria/galeria (18).jpeg" alt="" width="72" height="72" />
                         </a>
                     </li>
                 </ul>
