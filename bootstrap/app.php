@@ -11,7 +11,20 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application(
+class HostingerApp extends Illuminate\Foundation\Application {
+
+    /**
+     * Get the path to the public / web directory.
+     *
+     * @return string
+     */
+    public function publicPath()
+    {
+        return $this->basePath.DIRECTORY_SEPARATOR.'public_html';
+    }
+}
+
+$app = new HostingerApp(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
