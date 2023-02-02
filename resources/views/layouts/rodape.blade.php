@@ -6,9 +6,7 @@
                 <a class="footer-logo" href="index.html">
                     <img src="images/logo-footer-360x52.png" alt="" width="180" height="26" />
                 </a>
-                <p>Somos uma igreja orgânica e relacional, que trabalha dentro da visão celular, objetivando despertar
-                    cada
-                    crente a fim de que possa desenvolver suas habilidades ministeriais e funcionar dentro do Reino.</p>
+                <p>Somos uma rede de células pertencente a Igreja do Evangelho Quadrangular - Sede do Pará, que funciona de modo organizo e relacional, objetivando despertar cada crente a fim de que possa desenvolver suas habilidades ministeriais e funcionar dentro do Reino.</p>
             </div>
             <div class="col-md-6 col-lg-3 offset-lg-1">
                 <h5 class="title">Galeria</h5>
