@@ -82,8 +82,7 @@
                             @enderror
                         </div>
                         <div class="form-wrap @error('crianca.nascimento') has-error @enderror">
-                            <input class="form-input" id="cadastro-nascimento" type="text" onfocus="this.type = 'date'"
-                                onblur="this.type = this.value ? 'date' : 'text'" name="crianca[nascimento]"
+                            <input class="form-input" id="cadastro-nascimento" type="date" name="crianca[nascimento]"
                                 placeholder="Data de nascimento" value="{{ old('crianca.nascimento') }}" />
                             @error('crianca.nascimento')
                                 <span class="form-validation">{{ $errors->first('crianca.nascimento') }}</span>
@@ -109,7 +108,7 @@
                                 <option value="" disabled selected>Célula</option>
                                 @foreach ($redes as $rede)
                                     <optgroup label="{{ $rede->nome }}">
-                                        @foreach ($rede->celulas as $celula)                                            
+                                        @foreach ($rede->celulas as $celula)
                                             <option value="{{ $celula->id }}" @selected(old('responsavel.celula_id') == $celula->id)>{{ $celula->nome }}</option>
                                         @endforeach
                                     </optgroup>
