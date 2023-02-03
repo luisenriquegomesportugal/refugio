@@ -82,9 +82,8 @@
                             @enderror
                         </div>
                         <div class="form-wrap @error('crianca.nascimento') has-error @enderror">
-                            <input class="form-input" id="cadastro-nascimento" type="text" onfocus="this.type = 'date'"
-                                onchange="this.type = this.value ? 'date' : 'text'" onblur="this.type = this.value ? 'date' : 'text'"
-                                 name="crianca[nascimento]" placeholder="Data de nascimento" value="{{ old('crianca.nascimento') }}" />
+                            <input class="form-input" id="cadastro-nascimento" type="tel" mask="99/99/9999" name="crianca[nascimento]"
+                                placeholder="Data de nascimento" value="{{ old('crianca.nascimento') }}" />
                             @error('crianca.nascimento')
                                 <span class="form-validation">{{ $errors->first('crianca.nascimento') }}</span>
                             @enderror
