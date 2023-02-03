@@ -67,7 +67,9 @@
 
 	// Initialize scripts that require a loaded page
 	$window.on('load', function () {
-		$("[mask]").inputmask({ mask: function () {  return $(this).attr('mask'); }});
+		$("[mask]").each(function() {
+			$(this).inputmask($(this).attr('mask'));
+		});
 
 		// FileInput
 		$('input[type=file]').each(function () {
