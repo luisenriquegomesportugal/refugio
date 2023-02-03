@@ -4,7 +4,7 @@
         <div class="row row-40">
             <div class="col-md-6 col-lg-4">
                 <a class="footer-logo" href="index.html">
-                    <img src="images/logo-footer-360x52.png" alt="" width="180" height="26" />
+                    <img src="images/favicon-light.png" alt="" height="26" />
                 </a>
                 <p>Somos uma rede de células pertencente a Igreja do Evangelho Quadrangular - Sede do Pará, que funciona de modo organizo e relacional, objetivando despertar cada crente a fim de que possa desenvolver suas habilidades ministeriais e funcionar dentro do Reino.</p>
             </div>
