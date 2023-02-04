@@ -37,9 +37,9 @@
                         @endif
                     </div>
                 </div>
-                <div class="row row-30 row-md-60 d-flex flex-row-reverse flex-md-row">
+                <div class="d-flex flex-column-reverse flex-md-row">
                     <div class="col-12 col-md-6">
-                        <h4 class="mb-2">Criança</h4>
+                        <h4 class="my-0 mt-md-4 mb-md-2">Criança</h4>
                         <div class="form-wrap @error('crianca.foto') has-error @enderror">
                             <label for="cadastro-foto">Foto</label>
                             <label class="form-input" for="cadastro-foto">
@@ -206,7 +206,7 @@
                                 id="responsavel-tabela-novo">Inserir responsável</button>
                         </div>
                     </div>
-                    <div class="col-12 col-md-5 offset-0 offset-md-1 position-relative">
+                    <div class="col-12 col-md-5 mb-4 mb-md-0 offset-0 offset-md-1 position-relative">
                         <img class="position-absolute" style="top: 0; right: -250px; scale: 1.4; opacity: 0.2;"
                             src="{{ asset('images/refukids-shape.svg') }}" alt="">
                         <p class="text-justify">Olá! Bem vindos! Estamos iniciando um novo tempo na Refukids. Nosso dever e
