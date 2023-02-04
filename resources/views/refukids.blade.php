@@ -105,7 +105,7 @@
                             src="{{ asset('images/refukids-shape.svg') }}" alt="">
                         <p class="text-justify">Olá! Bem vindos! Estamos iniciando um novo tempo na Refukids. Nosso dever e
                             anseio é levar cada criança a viver o propósito eterno de Deus em suas vidas. </p>
-                        <p class="text-justify">Entendendo a importância desse ministério, estamos NOS equipando e
+                        <p class="text-justify">Entendendo a importância desse ministério, estamos nos equipando e
                             melhorando a
                             nossa estrutura para a melhor segurança e acompanhamento das nossas crianças, por isso todas
                             terão
