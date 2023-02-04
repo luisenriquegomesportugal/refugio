@@ -202,7 +202,7 @@
                                 <label for="responsavel-1-cadastro-foto">Foto</label>
                                 <label class="form-input" for="responsavel-1-cadastro-foto">
                                     <input class="d-none" id="responsavel-1-cadastro-foto"
-                                        type="file" name="responsavel[0][foto]"
+                                        type="file" name="responsavel[1][foto]"
                                         accept="image/jpeg,image/jpg,image/png">
                                 </label>
                             </div>
@@ -210,7 +210,7 @@
                                 class="form-wrap @error("responsavel.1.celula_id") has-error @enderror">
                                 <label for="responsavel-1-cadastro-celula">Célula</label>
                                 <select class="form-input" id="responsavel-1-cadastro-celula"
-                                    name="responsavel[0][celula_id]" id="celula">
+                                    name="responsavel[1][celula_id]" id="celula">
                                     <option value="" disabled @selected(old("responsavel.1.celula_id", null) == null)>Selecione</option>
                                     @foreach ($redes as $rede)
                                         <optgroup label="{{ $rede->nome }}">
@@ -231,7 +231,7 @@
                                 class="form-wrap @error("responsavel.1.nome") has-error @enderror">
                                 <label for="responsavel-1-cadastro-name">Nome</label>
                                 <input class="form-input" id="responsavel-1-cadastro-name"
-                                    type="text" name="responsavel[0][nome]"
+                                    type="text" name="responsavel[1][nome]"
                                     value="{{ old("responsavel.1.nome") }}" />
                                 @error("responsavel.1.nome")
                                     <span
@@ -242,7 +242,7 @@
                                 class="form-wrap @error("responsavel.1.sexo") has-error @enderror">
                                 <label for="responsavel-1-cadastro-sexo">Sexo</label>
                                 <select class="form-input" id="responsavel-1-cadastro-sexo"
-                                    name="responsavel[0][sexo]">
+                                    name="responsavel[1][sexo]">
                                     <option value="" disabled @selected(old("responsavel.1.sexo", null) == null)>Selecione</option>
                                     <option value="M" @selected(old("responsavel.1.sexo", null) == "M")>Masculino</option>
                                     <option value="F" @selected(old("responsavel.1.sexo", null) == "F")>Feminino</option>
@@ -258,7 +258,7 @@
                                     nascimento</label>
                                 <input class="form-input"
                                     id="responsavel-1-cadastro-nascimento"
-                                    name="responsavel[0][nascimento]" type="date"
+                                    name="responsavel[1][nascimento]" type="date"
                                     value="{{ old("responsavel.1.nascimento") }}" />
                                 @error("responsavel.1.nascimento")
                                     <span
@@ -271,7 +271,7 @@
                                     for="responsavel-1-cadastro-telefone">Telefone</label>
                                 <input class="form-input"
                                     id="responsavel-1-cadastro-telefone" type="tel"
-                                    name="responsavel[0][telefone]"
+                                    name="responsavel[1][telefone]"
                                     value="{{ old("responsavel.1.telefone") }}" />
                                 @error("responsavel.1.telefone")
                                     <span
@@ -279,7 +279,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-start gap-2">
+                        <div class="d-flex align-items-center justify-content-start">
                             <button class="button button-primary" type="submit">Cadastrar</button>
                         </div>
                     </div>
@@ -315,56 +315,4 @@
             </div>
         </form>
     </section>
-    <script id="responsavel-linha-template" type="text/html">
-        <div class="responsavel-novo mb-4 responsavel-INDEX_LINHA">
-            <div class="form-wrap d-flex justify-content-between align-items-center">
-                <span>Responsável RESPONSAVEL_LINHA</span>
-                <i
-                    class="mdi mdi-24px mdi-close deleta-linha-tabela-responsavel cursor-pointer"></i>
-            </div>
-            <div class="form-wrap">
-                <label for="responsavel-INDEX_LINHA-cadastro-foto">Foto</label>
-                <label class="form-input" for="responsavel-INDEX_LINHA-cadastro-foto">
-                    <span></span>
-                    <input class="d-none" id="responsavel-INDEX_LINHA-cadastro-foto" type="file" name="responsavel[INDEX_LINHA][foto]" accept="image/jpeg,image/jpg,image/png">
-                </label>
-            </div>
-            <div class="form-wrap">
-                <label for="responsavel-INDEX_LINHA-cadastro-celula">Célula</label>
-                <select class="form-input" id="responsavel-INDEX_LINHA-cadastro-celula" name="responsavel[INDEX_LINHA][celula_id]"
-                    id="celula">
-                    <option value="" disabled selected>Selecione</option>
-                    @foreach ($redes as $rede)
-                        <optgroup label="{{ $rede->nome }}">
-                            @foreach ($rede->celulas as $celula)
-                                <option value="{{ $celula->id }}">{{ $celula->nome }}
-                                </option>
-                            @endforeach
-                        </optgroup>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-wrap">
-                <label for="responsavel-INDEX_LINHA-cadastro-name">Nome</label>
-                <input class="form-input" id="responsavel-INDEX_LINHA-cadastro-name" type="text" name="responsavel[INDEX_LINHA][nome]" />
-            </div>
-            <div class="form-wrap">
-                <label for="responsavel-INDEX_LINHA-cadastro-sexo">Sexo</label>
-                <select class="form-input" id="responsavel-INDEX_LINHA-cadastro-sexo" name="responsavel[INDEX_LINHA][sexo]">
-                    <option value="" disabled selected>Selecione</option>
-                    <option value="M">Masculino</option>
-                    <option value="F">Feminino</option>
-                </select>
-            </div>
-            <div class="form-wrap">
-                <label for="responsavel-INDEX_LINHA-cadastro-nascimento">Data de nascimento</label>
-                <input class="form-input" id="responsavel-INDEX_LINHA-cadastro-nascimento" name="responsavel[INDEX_LINHA][nascimento]" type="date" />
-            </div>
-            <div class="form-wrap">
-                <label for="responsavel-INDEX_LINHA-cadastro-telefone">Telefone</label>
-                <input class="form-input" id="responsavel-INDEX_LINHA-cadastro-telefone"
-                    type="tel" name="responsavel[INDEX_LINHA][telefone]" />
-            </div>
-        </div>
-    </script>
 @endsection
