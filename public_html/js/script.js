@@ -1364,13 +1364,5 @@
 
 
 window.addResponsavel = function() {
-	let lista = $("div#responsavel-lista-to-inserir");
-	let count = $("div#responsavel-lista-to-inserir div.responsavel-novo").length;
-	let template = $("script#responsavel-linha-template")
-		.html()
-		.replaceAll('RESPONSAVEL_LINHA', count + 1)
-		.replaceAll('INDEX_LINHA', count);
-	lista.append($(template));
-
-	$(".error-responsavel").remove();
+	alert('teste');
 }
