@@ -51,7 +51,7 @@
                             @enderror
                         </div>
                         <div class="form-wrap @error('crianca.celula_id') has-error @enderror">
-                            <label for="cadastro-celula">Célula</label>
+                            <label for="cadastro-celula">Célula *</label>
                             <select class="form-input" id="cadastro-celula" name="crianca[celula_id]" id="celula">
                                 <option value="" selected disabled>Selecione</option>
                                 @foreach ($redes as $rede)
@@ -68,7 +68,7 @@
                             @enderror
                         </div>
                         <div class="form-wrap @error('crianca.nome') has-error @enderror">
-                            <label for="cadastro-name">Nome</label>
+                            <label for="cadastro-name">Nome *</label>
                             <input class="form-input" id="cadastro-name" type="text" name="crianca[nome]"
                                 value="{{ old('crianca.nome') }}" />
                             @error('crianca.nome')
@@ -76,7 +76,7 @@
                             @enderror
                         </div>
                         <div class="form-wrap @error('crianca.sexo') has-error @enderror">
-                            <label for="cadastro-sexo">Sexo</label>
+                            <label for="cadastro-sexo">Sexo *</label>
                             <select class="form-input" id="cadastro-sexo" name="crianca[sexo]" id="sexo">
                                 <option value="" selected disabled>Selecione</option>
                                 <option value="M" @selected(old('crianca.sexo') == 'M')>Masculino</option>
@@ -87,7 +87,7 @@
                             @enderror
                         </div>
                         <div class="form-wrap @error('crianca.nascimento') has-error @enderror">
-                            <label for="cadastro-nascimento">Data de nascimento</label>
+                            <label for="cadastro-nascimento">Data de nascimento *</label>
                             <input class="form-input" id="cadastro-nascimento" type="date" name="crianca[nascimento]"
                                 value="{{ old('crianca.nascimento') }}" />
                             @error('crianca.nascimento')
@@ -121,7 +121,7 @@
                             </div>
                             <div
                                 class="form-wrap @error("responsavel.0.celula_id") has-error @enderror">
-                                <label for="responsavel-0-cadastro-celula">Célula</label>
+                                <label for="responsavel-0-cadastro-celula">Célula *</label>
                                 <select class="form-input" id="responsavel-0-cadastro-celula"
                                     name="responsavel[0][celula_id]" id="celula">
                                     <option value="" disabled @selected(old("responsavel.0.celula_id", null) == null)>Selecione</option>
@@ -142,7 +142,7 @@
                             </div>
                             <div
                                 class="form-wrap @error("responsavel.0.nome") has-error @enderror">
-                                <label for="responsavel-0-cadastro-name">Nome</label>
+                                <label for="responsavel-0-cadastro-name">Nome *</label>
                                 <input class="form-input" id="responsavel-0-cadastro-name"
                                     type="text" name="responsavel[0][nome]"
                                     value="{{ old("responsavel.0.nome") }}" />
@@ -153,7 +153,7 @@
                             </div>
                             <div
                                 class="form-wrap @error("responsavel.0.sexo") has-error @enderror">
-                                <label for="responsavel-0-cadastro-sexo">Sexo</label>
+                                <label for="responsavel-0-cadastro-sexo">Sexo *</label>
                                 <select class="form-input" id="responsavel-0-cadastro-sexo"
                                     name="responsavel[0][sexo]">
                                     <option value="" disabled @selected(old("responsavel.0.sexo", null) == null)>Selecione</option>
@@ -168,7 +168,7 @@
                             <div
                                 class="form-wrap @error("responsavel.0.nascimento") has-error @enderror">
                                 <label for="responsavel-0-cadastro-nascimento">Data de
-                                    nascimento</label>
+                                    nascimento *</label>
                                 <input class="form-input"
                                     id="responsavel-0-cadastro-nascimento"
                                     name="responsavel[0][nascimento]" type="date"
@@ -181,7 +181,7 @@
                             <div
                                 class="form-wrap @error("responsavel.0.telefone") has-error @enderror">
                                 <label
-                                    for="responsavel-0-cadastro-telefone">Telefone</label>
+                                    for="responsavel-0-cadastro-telefone">Telefone *</label>
                                 <input class="form-input"
                                     id="responsavel-0-cadastro-telefone" type="tel"
                                     name="responsavel[0][telefone]"
@@ -196,8 +196,10 @@
                             <div class="responsavel-novo mb-4 responsavel-1">
                                 <div class="form-wrap d-flex justify-content-between align-items-center">
                                     <span>Responsável 2</span>
-                                    <i
-                                        class="mdi mdi-24px mdi-close deleta-linha-tabela-responsavel cursor-pointer"></i>
+                                    <div class="deleta-linha-tabela-responsavel">
+                                        <i class="mdi mdi-24px mdi-close mr-2 cursor-pointer"></i>
+                                        Apagar 2º responsável
+                                    </div>
                                 </div>
                                 <div class="form-wrap">
                                     <label for="responsavel-1-cadastro-foto">Foto</label>
@@ -209,7 +211,7 @@
                                 </div>
                                 <div
                                     class="form-wrap @error("responsavel.1.celula_id") has-error @enderror">
-                                    <label for="responsavel-1-cadastro-celula">Célula</label>
+                                    <label for="responsavel-1-cadastro-celula">Célula *</label>
                                     <select class="form-input" id="responsavel-1-cadastro-celula"
                                         name="responsavel[1][celula_id]" id="celula">
                                         <option value="" disabled @selected(old("responsavel.1.celula_id", null) == null)>Selecione</option>
@@ -230,7 +232,7 @@
                                 </div>
                                 <div
                                     class="form-wrap @error("responsavel.1.nome") has-error @enderror">
-                                    <label for="responsavel-1-cadastro-name">Nome</label>
+                                    <label for="responsavel-1-cadastro-name">Nome *</label>
                                     <input class="form-input" id="responsavel-1-cadastro-name"
                                         type="text" name="responsavel[1][nome]"
                                         value="{{ old("responsavel.1.nome") }}" />
@@ -241,7 +243,7 @@
                                 </div>
                                 <div
                                     class="form-wrap @error("responsavel.1.sexo") has-error @enderror">
-                                    <label for="responsavel-1-cadastro-sexo">Sexo</label>
+                                    <label for="responsavel-1-cadastro-sexo">Sexo *</label>
                                     <select class="form-input" id="responsavel-1-cadastro-sexo"
                                         name="responsavel[1][sexo]">
                                         <option value="" disabled @selected(old("responsavel.1.sexo", null) == null)>Selecione</option>
@@ -256,7 +258,7 @@
                                 <div
                                     class="form-wrap @error("responsavel.1.nascimento") has-error @enderror">
                                     <label for="responsavel-1-cadastro-nascimento">Data de
-                                        nascimento</label>
+                                        nascimento *</label>
                                     <input class="form-input"
                                         id="responsavel-1-cadastro-nascimento"
                                         name="responsavel[1][nascimento]" type="date"
@@ -269,7 +271,7 @@
                                 <div
                                     class="form-wrap @error("responsavel.1.telefone") has-error @enderror">
                                     <label
-                                        for="responsavel-1-cadastro-telefone">Telefone</label>
+                                        for="responsavel-1-cadastro-telefone">Telefone *</label>
                                     <input class="form-input"
                                         id="responsavel-1-cadastro-telefone" type="tel"
                                         name="responsavel[1][telefone]"
