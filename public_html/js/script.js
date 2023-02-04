@@ -69,14 +69,21 @@
 	$window.on('load', function () {
 		//Novo responsavel 
 		$(document).on("click", "#responsavel-tabela-novo", function () {
-			let lista = $("tbody#responsavel-linha-lista");
+			let lista = $("div#responsavel-lista-to-inserir");
+			let count = $("div#responsavel-lista-to-inserir div.responsavel-novo").length;
 			let template = $("script#responsavel-linha-template")
 				.html()
-				.replaceAll('INDEX_LINHA', $("tbody#responsavel-linha-lista tr").length);
-			lista.prepend($(template));
+				.replaceAll('RESPONSAVEL_LINHA', count + 1)
+				.replaceAll('INDEX_LINHA', count);
+			lista.append($(template));
 
 			$(".error-responsavel").remove();
 		});
+
+		$(document).on("click", ".deleta-linha-tabela-responsavel", function() {
+			$(this).parents(".responsavel-novo")
+				.remove();
+		})
 
 		// FileInput
 		$('input[type=file]').each(function () {

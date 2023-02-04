@@ -55,7 +55,8 @@ class RefukidsController extends Controller
                 return back()->withInput()->withErrors(['exception' => 'Essa criança já foi cadastrada']);
             }
 
-            foreach (Arr::get($request->all(), 'responsavel') as $atributosResponsavel) {
+            $responsaveis = Arr::get($request->all(), 'responsavel');
+            foreach (array_values($responsaveis) as $atributosResponsavel) {
                 $responsavel = $this->membrosRepository->salvar($atributosResponsavel);
                 
                 $this->refukidsRepository->salvar([
