@@ -192,7 +192,7 @@
                                 @enderror
                             </div>
                         </div>
-                        @if(old('responsavel', false) && count(old('responsavel', [])) > 1)
+                        @if(!old('responsavel') || old('responsavel') && count(old('responsavel', [])) > 1)
                             <div class="responsavel-novo mb-4 responsavel-1">
                                 <div class="form-wrap d-flex justify-content-between align-items-center">
                                     <span>Responsável 2</span>
