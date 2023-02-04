@@ -196,7 +196,7 @@
                             <div class="responsavel-novo mb-4 responsavel-1">
                                 <div class="form-wrap d-flex justify-content-between align-items-center">
                                     <span>Responsável 2</span>
-                                    <div class="deleta-linha-tabela-responsavel">
+                                    <div class="deleta-linha-tabela-responsavel d-flex alig-items-center">
                                         <i class="mdi mdi-24px mdi-close mr-2 cursor-pointer"></i>
                                         Apagar 2º responsável
                                     </div>
