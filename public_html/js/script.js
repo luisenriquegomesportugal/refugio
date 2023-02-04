@@ -65,44 +65,20 @@
 		$window.on('scroll', scrollHandler);
 	}
 
+	window.addResponsavel = function() {
+		let lista = $("div#responsavel-lista-to-inserir");
+		let count = $("div#responsavel-lista-to-inserir div.responsavel-novo").length;
+		let template = $("script#responsavel-linha-template")
+			.html()
+			.replaceAll('RESPONSAVEL_LINHA', count + 1)
+			.replaceAll('INDEX_LINHA', count);
+		lista.append($(template));
+
+		$(".error-responsavel").remove();
+	}
+
 	// Initialize scripts that require a loaded page
 	$window.on('load', function () {
-		//Novo responsavel 
-		$(document).on("click", "#responsavel-tabela-novo", function () {
-			let lista = $("div#responsavel-lista-to-inserir");
-			let count = $("div#responsavel-lista-to-inserir div.responsavel-novo").length;
-			let template = $("script#responsavel-linha-template")
-				.html()
-				.replaceAll('RESPONSAVEL_LINHA', count + 1)
-				.replaceAll('INDEX_LINHA', count);
-			lista.append($(template));
-
-			$(".error-responsavel").remove();
-		});
-
-		$(document).on("click", ".deleta-linha-tabela-responsavel", function() {
-			$(this).parents(".responsavel-novo")
-				.remove();
-		})
-
-		// FileInput
-		$('input[type=file]').each(function () {
-			let span = $('<span />');
-			$(this).before(span);
-		});
-
-		$(document).on('change blur', 'input[type=file]', function () {
-			let [file] = this.files;
-			$(this).prev('span')
-				.html(file && file.name);
-		});
-
-		// Form remove error on tap
-		$(document).on('change', "input, select, textarea", function () {
-			$(this).parents('.form-wrap').removeClass('has-error');
-			$(this).siblings('.form-validation').remove();
-		})
-
 		// Page loader & Page transition
 		if (plugins.preloader.length && !isNoviBuilder) {
 			pageTransition({
@@ -1369,6 +1345,33 @@
 			})
 				.trigger('resize');
 		}
+
+		//Novo responsavel 
+		$(document).on("click", "#responsavel-tabela-novo", window.addResponsavel);
+
+		$(document).on("click", ".deleta-linha-tabela-responsavel", function() {
+			$(this).parents(".responsavel-novo")
+				.remove();
+		})
+
+		// FileInput
+		$('input[type=file]').each(function () {
+			let span = $('<span />');
+			$(this).before(span);
+		});
+
+		$(document).on('change blur', 'input[type=file]', function () {
+			let [file] = this.files;
+			$(this).prev('span')
+				.html(file && file.name);
+		});
+
+		// Form remove error on tap
+		$(document).on('change', "input, select, textarea", function () {
+			$(this).parents('.form-wrap').removeClass('has-error');
+			$(this).siblings('.form-validation').remove();
+		})
+
 	});
 
 }());
