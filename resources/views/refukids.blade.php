@@ -107,102 +107,182 @@
                                 @enderror
                             </div>
                         </div>
-                        <div id="responsavel-lista-to-inserir">
-                            @if (!empty(old('responsavel', [])))
-                                @foreach (old('responsavel', []) as $responsavel)
-                                    <div class="responsavel-novo mb-4 responsavel-{{ $loop->index }}">
-                                        <div class="form-wrap d-flex justify-content-between align-items-center">
-                                            <span>Responsável {{ $loop->iteration }}</span>
-                                            <i
-                                                class="mdi mdi-24px mdi-close deleta-linha-tabela-responsavel cursor-pointer"></i>
-                                        </div>
-                                        <div class="form-wrap">
-                                            <label for="responsavel-{{ $loop->index }}-cadastro-foto">Foto</label>
-                                            <label class="form-input" for="responsavel-{{ $loop->index }}-cadastro-foto">
-                                                <input class="d-none" id="responsavel-{{ $loop->index }}-cadastro-foto"
-                                                    type="file" name="responsavel[{{ $loop->index }}][foto]"
-                                                    accept="image/jpeg,image/jpg,image/png">
-                                            </label>
-                                        </div>
-                                        <div
-                                            class="form-wrap @error("responsavel.{$loop->index}.celula_id") has-error @enderror">
-                                            <label for="responsavel-{{ $loop->index }}-cadastro-celula">Célula</label>
-                                            <select class="form-input" id="responsavel-{{ $loop->index }}-cadastro-celula"
-                                                name="responsavel[{{ $loop->index }}][celula_id]" id="celula">
-                                                <option value="" disabled @selected(old("responsavel.{$loop->index}.celula_id", null) == null)>Selecione</option>
-                                                @foreach ($redes as $rede)
-                                                    <optgroup label="{{ $rede->nome }}">
-                                                        @foreach ($rede->celulas as $celula)
-                                                            <option value="{{ $celula->id }}" @selected(old("responsavel.{$loop->index}.celula_id", null) == $celula->id)>
-                                                                {{ $celula->nome }}
-                                                            </option>
-                                                        @endforeach
-                                                    </optgroup>
-                                                @endforeach
-                                            </select>
-                                            @error("responsavel.{$loop->index}.celula_id")
-                                                <span
-                                                    class="form-validation">{{ $errors->first("responsavel.{$loop->index}.celula_id") }}</span>
-                                            @enderror
-                                        </div>
-                                        <div
-                                            class="form-wrap @error("responsavel.{$loop->index}.nome") has-error @enderror">
-                                            <label for="responsavel-{{ $loop->index }}-cadastro-name">Nome</label>
-                                            <input class="form-input" id="responsavel-{{ $loop->index }}-cadastro-name"
-                                                type="text" name="responsavel[{{ $loop->index }}][nome]"
-                                                value="{{ old("responsavel.{$loop->index}.nome") }}" />
-                                            @error("responsavel.{$loop->index}.nome")
-                                                <span
-                                                    class="form-validation">{{ $errors->first("responsavel.{$loop->index}.nome") }}</span>
-                                            @enderror
-                                        </div>
-                                        <div
-                                            class="form-wrap @error("responsavel.{$loop->index}.sexo") has-error @enderror">
-                                            <label for="responsavel-{{ $loop->index }}-cadastro-sexo">Sexo</label>
-                                            <select class="form-input" id="responsavel-{{ $loop->index }}-cadastro-sexo"
-                                                name="responsavel[{{ $loop->index }}][sexo]">
-                                                <option value="" disabled @selected(old("responsavel.{$loop->index}.sexo", null) == null)>Selecione</option>
-                                                <option value="M" @selected(old("responsavel.{$loop->index}.sexo", null) == "M")>Masculino</option>
-                                                <option value="F" @selected(old("responsavel.{$loop->index}.sexo", null) == "F")>Feminino</option>
-                                            </select>
-                                            @error("responsavel.{$loop->index}.sexo")
-                                                <span
-                                                    class="form-validation">{{ $errors->first("responsavel.{$loop->index}.sexo") }}</span>
-                                            @enderror
-                                        </div>
-                                        <div
-                                            class="form-wrap @error("responsavel.{$loop->index}.nascimento") has-error @enderror">
-                                            <label for="responsavel-{{ $loop->index }}-cadastro-nascimento">Data de
-                                                nascimento</label>
-                                            <input class="form-input"
-                                                id="responsavel-{{ $loop->index }}-cadastro-nascimento"
-                                                name="responsavel[{{ $loop->index }}][nascimento]" type="date"
-                                                value="{{ old("responsavel.{$loop->index}.nascimento") }}" />
-                                            @error("responsavel.{$loop->index}.nascimento")
-                                                <span
-                                                    class="form-validation">{{ $errors->first("responsavel.{$loop->index}.nascimento") }}</span>
-                                            @enderror
-                                        </div>
-                                        <div
-                                            class="form-wrap @error("responsavel.{$loop->index}.telefone") has-error @enderror">
-                                            <label
-                                                for="responsavel-{{ $loop->index }}-cadastro-telefone">Telefone</label>
-                                            <input class="form-input"
-                                                id="responsavel-{{ $loop->index }}-cadastro-telefone" type="tel"
-                                                name="responsavel[{{ $loop->index }}][telefone]"
-                                                value="{{ old("responsavel.{$loop->index}.telefone") }}" />
-                                            @error("responsavel.{$loop->index}.telefone")
-                                                <span
-                                                    class="form-validation">{{ $errors->first("responsavel.{$loop->index}.telefone") }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                @endforeach
-                            @endif
+                        <div class="responsavel-novo mb-4 responsavel-0">
+                            <div class="form-wrap d-flex justify-content-between align-items-center">
+                                <span>Responsável 1</span>
+                                <i
+                                    class="mdi mdi-24px mdi-close deleta-linha-tabela-responsavel cursor-pointer"></i>
+                            </div>
+                            <div class="form-wrap">
+                                <label for="responsavel-0-cadastro-foto">Foto</label>
+                                <label class="form-input" for="responsavel-0-cadastro-foto">
+                                    <input class="d-none" id="responsavel-0-cadastro-foto"
+                                        type="file" name="responsavel[0][foto]"
+                                        accept="image/jpeg,image/jpg,image/png">
+                                </label>
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.0.celula_id") has-error @enderror">
+                                <label for="responsavel-0-cadastro-celula">Célula</label>
+                                <select class="form-input" id="responsavel-0-cadastro-celula"
+                                    name="responsavel[0][celula_id]" id="celula">
+                                    <option value="" disabled @selected(old("responsavel.0.celula_id", null) == null)>Selecione</option>
+                                    @foreach ($redes as $rede)
+                                        <optgroup label="{{ $rede->nome }}">
+                                            @foreach ($rede->celulas as $celula)
+                                                <option value="{{ $celula->id }}" @selected(old("responsavel.0.celula_id", null) == $celula->id)>
+                                                    {{ $celula->nome }}
+                                                </option>
+                                            @endforeach
+                                        </optgroup>
+                                    @endforeach
+                                </select>
+                                @error("responsavel.0.celula_id")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.0.celula_id") }}</span>
+                                @enderror
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.0.nome") has-error @enderror">
+                                <label for="responsavel-0-cadastro-name">Nome</label>
+                                <input class="form-input" id="responsavel-0-cadastro-name"
+                                    type="text" name="responsavel[0][nome]"
+                                    value="{{ old("responsavel.0.nome") }}" />
+                                @error("responsavel.0.nome")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.0.nome") }}</span>
+                                @enderror
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.0.sexo") has-error @enderror">
+                                <label for="responsavel-0-cadastro-sexo">Sexo</label>
+                                <select class="form-input" id="responsavel-0-cadastro-sexo"
+                                    name="responsavel[0][sexo]">
+                                    <option value="" disabled @selected(old("responsavel.0.sexo", null) == null)>Selecione</option>
+                                    <option value="M" @selected(old("responsavel.0.sexo", null) == "M")>Masculino</option>
+                                    <option value="F" @selected(old("responsavel.0.sexo", null) == "F")>Feminino</option>
+                                </select>
+                                @error("responsavel.0.sexo")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.0.sexo") }}</span>
+                                @enderror
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.0.nascimento") has-error @enderror">
+                                <label for="responsavel-0-cadastro-nascimento">Data de
+                                    nascimento</label>
+                                <input class="form-input"
+                                    id="responsavel-0-cadastro-nascimento"
+                                    name="responsavel[0][nascimento]" type="date"
+                                    value="{{ old("responsavel.0.nascimento") }}" />
+                                @error("responsavel.0.nascimento")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.0.nascimento") }}</span>
+                                @enderror
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.0.telefone") has-error @enderror">
+                                <label
+                                    for="responsavel-0-cadastro-telefone">Telefone</label>
+                                <input class="form-input"
+                                    id="responsavel-0-cadastro-telefone" type="tel"
+                                    name="responsavel[0][telefone]"
+                                    value="{{ old("responsavel.0.telefone") }}" />
+                                @error("responsavel.0.telefone")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.0.telefone") }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="responsavel-novo mb-4 responsavel-1">
+                            <div class="form-wrap d-flex justify-content-between align-items-center">
+                                <span>Responsável 2</span>
+                                <i
+                                    class="mdi mdi-24px mdi-close deleta-linha-tabela-responsavel cursor-pointer"></i>
+                            </div>
+                            <div class="form-wrap">
+                                <label for="responsavel-1-cadastro-foto">Foto</label>
+                                <label class="form-input" for="responsavel-1-cadastro-foto">
+                                    <input class="d-none" id="responsavel-1-cadastro-foto"
+                                        type="file" name="responsavel[0][foto]"
+                                        accept="image/jpeg,image/jpg,image/png">
+                                </label>
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.1.celula_id") has-error @enderror">
+                                <label for="responsavel-1-cadastro-celula">Célula</label>
+                                <select class="form-input" id="responsavel-1-cadastro-celula"
+                                    name="responsavel[0][celula_id]" id="celula">
+                                    <option value="" disabled @selected(old("responsavel.1.celula_id", null) == null)>Selecione</option>
+                                    @foreach ($redes as $rede)
+                                        <optgroup label="{{ $rede->nome }}">
+                                            @foreach ($rede->celulas as $celula)
+                                                <option value="{{ $celula->id }}" @selected(old("responsavel.1.celula_id", null) == $celula->id)>
+                                                    {{ $celula->nome }}
+                                                </option>
+                                            @endforeach
+                                        </optgroup>
+                                    @endforeach
+                                </select>
+                                @error("responsavel.1.celula_id")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.1.celula_id") }}</span>
+                                @enderror
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.1.nome") has-error @enderror">
+                                <label for="responsavel-1-cadastro-name">Nome</label>
+                                <input class="form-input" id="responsavel-1-cadastro-name"
+                                    type="text" name="responsavel[0][nome]"
+                                    value="{{ old("responsavel.1.nome") }}" />
+                                @error("responsavel.1.nome")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.1.nome") }}</span>
+                                @enderror
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.1.sexo") has-error @enderror">
+                                <label for="responsavel-1-cadastro-sexo">Sexo</label>
+                                <select class="form-input" id="responsavel-1-cadastro-sexo"
+                                    name="responsavel[0][sexo]">
+                                    <option value="" disabled @selected(old("responsavel.1.sexo", null) == null)>Selecione</option>
+                                    <option value="M" @selected(old("responsavel.1.sexo", null) == "M")>Masculino</option>
+                                    <option value="F" @selected(old("responsavel.1.sexo", null) == "F")>Feminino</option>
+                                </select>
+                                @error("responsavel.1.sexo")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.1.sexo") }}</span>
+                                @enderror
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.1.nascimento") has-error @enderror">
+                                <label for="responsavel-1-cadastro-nascimento">Data de
+                                    nascimento</label>
+                                <input class="form-input"
+                                    id="responsavel-1-cadastro-nascimento"
+                                    name="responsavel[0][nascimento]" type="date"
+                                    value="{{ old("responsavel.1.nascimento") }}" />
+                                @error("responsavel.1.nascimento")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.1.nascimento") }}</span>
+                                @enderror
+                            </div>
+                            <div
+                                class="form-wrap @error("responsavel.1.telefone") has-error @enderror">
+                                <label
+                                    for="responsavel-1-cadastro-telefone">Telefone</label>
+                                <input class="form-input"
+                                    id="responsavel-1-cadastro-telefone" type="tel"
+                                    name="responsavel[0][telefone]"
+                                    value="{{ old("responsavel.1.telefone") }}" />
+                                @error("responsavel.1.telefone")
+                                    <span
+                                        class="form-validation">{{ $errors->first("responsavel.1.telefone") }}</span>
+                                @enderror
+                            </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-start gap-2">
                             <button class="button button-primary" type="submit">Cadastrar</button>
-                            <div class="button button-primary mt-0 z-3" onclick="window.addResponsavel()">Inserir responsável</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-5 mb-4 mb-md-0 offset-0 offset-md-1 position-relative">
