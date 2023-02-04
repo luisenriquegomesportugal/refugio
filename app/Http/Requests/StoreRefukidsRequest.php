@@ -16,7 +16,7 @@ class StoreRefukidsRequest extends FormRequest
     public function authorize()
     {
         $this->storeMembroRequest = new StoreMembroRequest();
-        // dump($this->all());
+        
         return true;
     }
 
@@ -31,10 +31,11 @@ class StoreRefukidsRequest extends FormRequest
 
         return array_merge(
             Arr::prependKeysWith($regras, 'crianca.'),
-            Arr::prependKeysWith($regras, 'responsavel.'),
             [
-                "responsavel.telefone" => "required"
-            ]
+                "responsavel" => "required",
+                "responsavel.*.telefone" => "required"
+            ],
+            Arr::prependKeysWith($regras, 'responsavel.*.')
         );
     }
 
@@ -45,17 +46,18 @@ class StoreRefukidsRequest extends FormRequest
      */
     public function attributes()
     {
-        $atributos = $this->storeMembroRequest->attributes();
-        $responsavelAtributos = Arr::map($atributos, function ($value) {
+        $membroAtributos = $this->storeMembroRequest->attributes();
+        $responsavelAtributos = Arr::map($membroAtributos, function ($value) {
             return "{$value} do responsável";
         });
 
         return array_merge(
-            Arr::prependKeysWith($atributos, 'crianca.'),
-            Arr::prependKeysWith($responsavelAtributos, 'responsavel.'),
+            Arr::prependKeysWith($membroAtributos, 'crianca.'),
             [
-                "responsavel.telefone" => "Telefone do responsável"
-            ]
+                "responsavel" => "Responsáveis",
+                "responsavel.*.telefone" => "Telefone do responsável"
+            ],
+            Arr::prependKeysWith($responsavelAtributos, 'responsavel.*.')
         );
     }
 }

@@ -48,29 +48,21 @@ class RefukidsController extends Controller
     public function salvar(StoreRefukidsRequest $request)
     {
         return DB::transaction(function () use ($request) {
-            $criancaAtributos = $request->get('crianca');
-            $jaTemEssaCrianca = Membro::where(Arr::only($criancaAtributos, ['celula_id', 'nome', 'nascimento', 'sexo']))
-                ->count();
-            if ($jaTemEssaCrianca) {
+            $crianca = $this->membrosRepository
+                ->salvar(Arr::get($request->all(), 'crianca'));
+                
+            if (!$crianca->wasRecentlyCreated) {
                 return back()->withInput()->withErrors(['exception' => 'Essa criança já foi cadastrada']);
-            }   
-
-            $criancaAtributos['foto'] = $request->file('crianca.foto')->store('membros');
-            $crianca = $this->membrosRepository->salvar($criancaAtributos);
-
-            $responsavelAtributos = $request->get('responsavel');
-            $responsavel = Membro::where(Arr::only($responsavelAtributos, ['celula_id', 'nome', 'nascimento', 'sexo']))
-                ->first();
-            if (!$responsavel) {
-                $responsavelAtributos['foto'] = $request->file('responsavel.foto')->store('membros');
-                $responsavel = $this->membrosRepository->salvar($responsavelAtributos);
             }
 
-            $this->refukidsRepository->salvar([
-                "crianca_id" => $crianca->id,
-                "responsavel_id" => $responsavel->id
-            ]);
-
+            foreach (Arr::get($request->all(), 'responsavel') as $atributosResponsavel) {
+                $responsavel = $this->membrosRepository->salvar($atributosResponsavel);
+                
+                $this->refukidsRepository->salvar([
+                    "crianca_id" => $crianca->id,
+                    "responsavel_id" => $responsavel->id
+                ]);
+            }
             return back()->with('refukids-cadastro-sucesso', true);
         });
     }

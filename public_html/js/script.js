@@ -67,24 +67,31 @@
 
 	// Initialize scripts that require a loaded page
 	$window.on('load', function () {
-		$("[mask]").each(function() {
-			$(this).inputmask($(this).attr('mask'));
+		//Novo responsavel 
+		$(document).on("click", "#responsavel-tabela-novo", function () {
+			let lista = $("tbody#responsavel-linha-lista");
+			let template = $("script#responsavel-linha-template")
+				.html()
+				.replaceAll('INDEX_LINHA', $("tbody#responsavel-linha-lista tr").length);
+			lista.prepend($(template));
+
+			$(".error-responsavel").remove();
 		});
 
 		// FileInput
 		$('input[type=file]').each(function () {
-			let span = $('<span />', { text: this.placeholder || "Arquivo" });
+			let span = $('<span />');
 			$(this).before(span);
 		});
 
-		$('input[type=file]').on('change blur', function () {
+		$(document).on('change blur', 'input[type=file]', function () {
 			let [file] = this.files;
 			$(this).prev('span')
-				.html(file ? file.name : this.placeholder);
+				.html(file && file.name);
 		});
 
 		// Form remove error on tap
-		$("input, select, textarea").on('change', function() {
+		$(document).on('change', "input, select, textarea", function () {
 			$(this).parents('.form-wrap').removeClass('has-error');
 			$(this).siblings('.form-validation').remove();
 		})
