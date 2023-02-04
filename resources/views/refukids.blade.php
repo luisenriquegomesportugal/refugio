@@ -202,7 +202,7 @@
                         </div>
                         <div class="d-flex align-items-center justify-content-start gap-2">
                             <button class="button button-primary" type="submit">Cadastrar</button>
-                            <button class="button button-primary mt-0" type="button" onclick="addResponsavel">Inserir responsável</button>
+                            <button class="button button-primary mt-0" type="button" onclick="window.addResponsavel()">Inserir responsável</button>
                         </div>
                     </div>
                     <div class="col-12 col-md-5 mb-4 mb-md-0 offset-0 offset-md-1 position-relative">
