@@ -195,6 +195,8 @@
                         <div class="responsavel-novo mb-4 responsavel-1">
                             <div class="form-wrap d-flex justify-content-between align-items-center">
                                 <span>Responsável 2</span>
+                                <i
+                                    class="mdi mdi-24px mdi-close deleta-linha-tabela-responsavel cursor-pointer"></i>
                             </div>
                             <div class="form-wrap">
                                 <label for="responsavel-1-cadastro-foto">Foto</label>
