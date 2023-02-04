@@ -16,7 +16,7 @@
                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                         <!-- RD Navbar Brand-->
                         <div class="rd-navbar-brand">
-                            <a class="brand" href="index.html"><img src="images/logo-302x44.png" alt=""
+                            <a class="brand" href="{{ route('inicio') }}"><img src="images/logo-302x44.png" alt=""
                                     width="151" height="22" /></a>
                         </div>
                     </div>
