@@ -1346,9 +1346,7 @@
 				.trigger('resize');
 		}
 
-		//Novo responsavel 
-		$(document).on("click", "#responsavel-tabela-novo", window.addResponsavel);
-
+		// Deleta form do usuario
 		$(document).on("click", ".deleta-linha-tabela-responsavel", function() {
 			$(this).parents(".responsavel-novo")
 				.remove();
