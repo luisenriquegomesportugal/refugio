@@ -40,12 +40,12 @@
                                 <td>{{$crianca->first()->crianca->nome}}</td>
                                 <td>{{$crianca->first()->crianca->sexo}}</td>
                                 <td>{{$crianca->first()->crianca->nascimento}}</td>
-                                <td>{{$crianca->first()->responsavel->first()->nome}}</td>
-                                <td>{{$crianca->first()->responsavel->first()->celula->nome}}</td>
-                                <td>{{$crianca->first()->responsavel->first()->telefone}}</td>
-                                <td>{{$crianca->last()->responsavel->first()->nome}}</td>
-                                <td>{{$crianca->last()->responsavel->first()->celula->nome}}</td>
-                                <td>{{$crianca->last()->responsavel->first()->telefone}}</td>
+                                <td>{{$crianca->first()->responsavel->nome}}</td>
+                                <td>{{$crianca->first()->responsavel->celula->nome}}</td>
+                                <td>{{$crianca->first()->responsavel->telefone}}</td>
+                                <td>{{$crianca->last()->responsavel->nome}}</td>
+                                <td>{{$crianca->last()->responsavel->celula->nome}}</td>
+                                <td>{{$crianca->last()->responsavel->telefone}}</td>
                             </tr>
                             @endforeach
                         </tbody>
