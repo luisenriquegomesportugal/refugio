@@ -11,7 +11,7 @@
     <meta property="og:type" content="page">
     <meta property="og:url" content="https://arearefugio.com.br/">
     <meta property="og:title" content="Refúgio Lifestyle">
-    <meta property="og:image" content="https://arearefugio.com.br/images/logo-302x44.png">
+    <meta property="og:image" content="https://arearefugio.com.br/images/refugio.png">
     <meta property="og:description" content="Somos uma rede de células pertencente a Igreja do Evangelho Quadrangular - Sede do Pará, que funciona de modo organizo e relacional.">
     <meta property="article:author" content="Refúgio Lifestyle">
     <meta name="twitter:card" content="summary">
