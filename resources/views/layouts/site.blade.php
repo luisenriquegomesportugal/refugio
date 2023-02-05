@@ -29,9 +29,10 @@
     <title>@yield('titulo') :: Refúgio Lifestyle</title>
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,700,900" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="stylesheet" href="css/style.css" id="main-styles-link" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/datatables.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/style.css" id="main-styles-link" />
     @livewireStyles
 </head>
 
@@ -53,8 +54,8 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="/js/core.min.js"></script>
+    <script src="/js/script.js"></script>
     @livewireScripts
 </body>
 

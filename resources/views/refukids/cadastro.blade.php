@@ -4,7 +4,7 @@
 @section('conteudo')
     <!-- Breadcrumbs -->
     <section class="section section-bredcrumbs shadow"
-        style="background: linear-gradient(#000000DD 20%, #00000088 100%), url(images/breadcrumbs-1920x440.jpg) no-repeat center / cover;">
+        style="background: linear-gradient(#000000DD 20%, #00000088 100%), url(/images/breadcrumbs-1920x440.jpg) no-repeat center / cover;">
         <div class="container context-dark breadcrumb-wrapper text-left">
             <h1>Refukids</h1>
             <div class="line"></div>

@@ -22,6 +22,7 @@ Route::get('/', [InicioController::class, "pagina"])->name('inicio');
 
 // Refukids
 Route::get('refukids', [RefukidsController::class, "pagina"])->name('refukids');
+Route::get('refukids/cadastro', [RefukidsController::class, "cadastro"])->name('refukids.cadastro');
 Route::post('refukids', [RefukidsController::class, "salvar"])->name('refukids.salvar');
 
 // Auth

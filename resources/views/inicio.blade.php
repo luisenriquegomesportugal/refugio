@@ -27,7 +27,7 @@
                                 <h1 data-caption-animate="fadeInUp" data-caption-delay="100">
                                     Refukids
                                 </h1>
-                                <a class="button button-primary" href="{{ route('refukids') }}" data-caption-animate="fadeInUp"
+                                <a class="button button-primary" href="{{ route('refukids.cadastro') }}" data-caption-animate="fadeInUp"
                                     data-caption-delay="450">Faça o cadastro de seu filho</a>
                             </div>
                         </div>

@@ -16,7 +16,7 @@
                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                         <!-- RD Navbar Brand-->
                         <div class="rd-navbar-brand">
-                            <a class="brand" href="{{ route('inicio') }}"><img src="images/logo-302x44.png" alt=""
+                            <a class="brand" href="{{ route('inicio') }}"><img src="/images/logo-302x44.png" alt=""
                                     width="151" height="22" /></a>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                                     <a class="rd-nav-link" href="{{ route('inicio') }}">Inicio</a>
                                 </li>
                                 <li class="rd-nav-item {{ Route::currentRouteName() === 'refukids' ? 'active' : '' }}">
-                                    <a class="rd-nav-link" href="{{ route('refukids') }}">Refukids</a>
+                                    <a class="rd-nav-link" href="{{ route('refukids.cadastro') }}">Refukids</a>
                                 </li>
                                 @if(env('ATIVAR_LIDERANCA', false) === true)
                                 @auth

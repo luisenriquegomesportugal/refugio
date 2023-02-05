@@ -9,6 +9,7 @@ use App\Repositories\Interfaces\RedeRepositoryInterface;
 use App\Repositories\Interfaces\RefukidsRepositoryInterface;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
@@ -26,7 +27,23 @@ class RefukidsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function pagina()
+    public function pagina(Request $request)
+    {
+        $refukids = $this->refukidsRepository
+            ->listar()
+            ->load(['crianca', 'responsavel'])
+            ->groupBy('crianca_id')
+            ->values();
+
+        return view('refukids.index', compact('refukids'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function cadastro()
     {
         $redes = $this->redeRepository
             ->buscarTodos(['id', 'nome'])
@@ -36,7 +53,7 @@ class RefukidsController extends Controller
                 }
             ]);
 
-        return view('refukids', compact('redes'));
+        return view('refukids.cadastro', compact('redes'));
     }
 
     /**

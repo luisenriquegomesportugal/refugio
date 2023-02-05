@@ -1358,6 +1358,7 @@
 			$(this).siblings('.form-validation').remove();
 		})
 
+		$('#refukids').DataTable();
 	});
 
 }());
