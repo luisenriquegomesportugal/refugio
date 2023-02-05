@@ -28,9 +28,12 @@ class StoreRefukidsRequest extends FormRequest
     public function rules()
     {
         $regras = $this->storeMembroRequest->rules();
-
+        
         return array_merge(
-            Arr::prependKeysWith($regras, 'crianca.'),
+            Arr::prependKeysWith(
+                Arr::except($regras, 'celula_id'),
+                'crianca.'
+            ),
             [
                 "responsavel" => "required",
                 "responsavel.*.telefone" => "required"

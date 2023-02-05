@@ -50,25 +50,8 @@
                                 <span class="form-validation">{{ $errors->first('crianca.foto') }}</span>
                             @enderror
                         </div>
-                        <div class="form-wrap @error('crianca.celula_id') has-error @enderror">
-                            <label for="cadastro-celula">Célula *</label>
-                            <select class="form-input" id="cadastro-celula" name="crianca[celula_id]" id="celula">
-                                <option value="" selected disabled>Selecione</option>
-                                @foreach ($redes as $rede)
-                                    <optgroup label="{{ $rede->nome }}">
-                                        @foreach ($rede->celulas as $celula)
-                                            <option value="{{ $celula->id }}" @selected(old('crianca.celula_id') == $celula->id)>
-                                                {{ $celula->nome }}</option>
-                                        @endforeach
-                                    </optgroup>
-                                @endforeach
-                            </select>
-                            @error('crianca.celula_id')
-                                <span class="form-validation">{{ $errors->first('crianca.celula_id') }}</span>
-                            @enderror
-                        </div>
                         <div class="form-wrap @error('crianca.nome') has-error @enderror">
-                            <label for="cadastro-name">Nome *</label>
+                            <label for="cadastro-name">Nome completo *</label>
                             <input class="form-input" id="cadastro-name" type="text" name="crianca[nome]"
                                 value="{{ old('crianca.nome') }}" />
                             @error('crianca.nome')
@@ -142,7 +125,7 @@
                             </div>
                             <div
                                 class="form-wrap @error("responsavel.0.nome") has-error @enderror">
-                                <label for="responsavel-0-cadastro-name">Nome *</label>
+                                <label for="responsavel-0-cadastro-name">Nome completo *</label>
                                 <input class="form-input" id="responsavel-0-cadastro-name"
                                     type="text" name="responsavel[0][nome]"
                                     value="{{ old("responsavel.0.nome") }}" />
@@ -227,7 +210,7 @@
                                 </div>
                                 <div
                                     class="form-wrap @error("responsavel.1.nome") has-error @enderror">
-                                    <label for="responsavel-1-cadastro-name">Nome *</label>
+                                    <label for="responsavel-1-cadastro-name">Nome completo *</label>
                                     <input class="form-input" id="responsavel-1-cadastro-name"
                                         type="text" name="responsavel[1][nome]"
                                         value="{{ old("responsavel.1.nome") }}" />
