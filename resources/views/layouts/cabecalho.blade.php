@@ -16,7 +16,7 @@
                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                         <!-- RD Navbar Brand-->
                         <div class="rd-navbar-brand">
-                            <a class="brand" href="{{ route('inicio') }}"><img src="/images/logo-302x44.png" alt=""
+                            <a class="brand" href="{{ route('inicio') }}"><img src="{{ asset("/assets/portal/images/logo-302x44.png") }}" alt=""
                                     width="151" height="22" /></a>
                         </div>
                     </div>
@@ -27,24 +27,9 @@
                                 <li class="rd-nav-item {{ Route::currentRouteName() === 'inicio' ? 'active' : '' }}">
                                     <a class="rd-nav-link" href="{{ route('inicio') }}">Inicio</a>
                                 </li>
-                                <li class="rd-nav-item {{ Route::currentRouteName() === 'refukids' ? 'active' : '' }}">
+                                <li class="rd-nav-item {{ Route::currentRouteName() === 'refukids.cadastro' ? 'active' : '' }}">
                                     <a class="rd-nav-link" href="{{ route('refukids.cadastro') }}">Refukids</a>
                                 </li>
-                                @if(env('ATIVAR_LIDERANCA', false) === true)
-                                @auth
-                                    <li class="rd-nav-item">
-                                        <a class="rd-nav-link" href="#">
-                                            <img src="{{ Auth::user()->foto }}" alt="{{ Auth::user()->nome_completo }}">
-                                            {{ Auth::user()->nome }}
-                                        </a>
-                                    </li>
-                                @endauth
-                                @guest
-                                    <li class="rd-nav-item">
-                                        <a class="rd-nav-link" href="{{ route('auth.google.redirect') }}">Liderança</a>
-                                    </li>
-                                @endguest
-                                @endif
                             </ul>
                         </div>
                     </div>

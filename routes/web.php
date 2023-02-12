@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Auth\GoogleSocialiteController;
-use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\InicioController;
-use App\Http\Controllers\RefukidsController;
+use App\Http\Controllers\Lideranca\Auth\LoginLiderancaController;
+use App\Http\Controllers\Lideranca\Auth\LogoutLiderancaController;
+use App\Http\Controllers\Lideranca\RefukidsLiderancaController;
+use App\Http\Controllers\Portal\InicioController;
+use App\Http\Controllers\Portal\RefukidsController;
+use App\Http\Controllers\Lideranca\DashboardLiderancaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,15 +21,18 @@ use Illuminate\Support\Facades\Route;
 
 // Home
 Route::get('/', [InicioController::class, "pagina"])->name('inicio');
-
-// Refukids
-Route::get('refukids', [RefukidsController::class, "pagina"])->name('refukids');
+Route::post('refukids/salvar', [RefukidsController::class, "salvar"])->name('refukids.salvar');
 Route::get('refukids/cadastro', [RefukidsController::class, "cadastro"])->name('refukids.cadastro');
-Route::post('refukids', [RefukidsController::class, "salvar"])->name('refukids.salvar');
 
-// Auth
-Route::get('auth/logout', [LogoutController::class, "execute"])->name('auth.logout');
 
-// Google Auth
-Route::get('/auth/google/redirect', [GoogleSocialiteController::class, "redirect"])->name('auth.google.redirect');
-Route::get('/auth/google/callback', [GoogleSocialiteController::class, "callback"]);
+// Admin
+Route::get('lideranca/login', [LoginLiderancaController::class, "redirect"])->name('lideranca.login');
+Route::get('lideranca/login/informacoes', [LoginLiderancaController::class, "callback"]);
+
+Route::middleware('auth')
+    ->group(function() {
+        Route::get('lideranca', [DashboardLiderancaController::class, "pagina"])->name('lideranca.inicio');
+        Route::get('lideranca/logout', [LogoutLiderancaController::class, "execute"])->name('lideranca.logout');
+        Route::get('lideranca/refukids', [RefukidsLiderancaController::class, "pagina"])->name('lideranca.refukids');
+    });
+
