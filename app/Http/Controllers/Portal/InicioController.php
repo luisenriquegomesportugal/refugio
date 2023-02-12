@@ -10,4 +10,9 @@ class InicioController extends Controller
     {
         return view('portal.inicio');
     }
+
+    public function politica()
+    {
+        return view('portal.politica');
+    }
 }

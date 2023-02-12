@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 // Home
 Route::get('/', [InicioController::class, "pagina"])->name('inicio');
+Route::get('/politica-de-privacidade', [InicioController::class, "politica"])->name('politica');
 Route::post('refukids/salvar', [RefukidsController::class, "salvar"])->name('refukids.salvar');
 Route::get('refukids/cadastro', [RefukidsController::class, "cadastro"])->name('refukids.cadastro');
 
