@@ -12,7 +12,7 @@
     </section>
     <!-- Form -->
     <section class="section section-lg bg-default">
-        <form method="post" action="{{ route('refukids.cadastro') }}" target="_self" enctype="multipart/form-data"
+        <form method="post" action="{{ route('refukids.salvar') }}" target="_self" enctype="multipart/form-data"
             class="needs-validation" novalidate>
             @csrf
             <div class="container relative-container">
