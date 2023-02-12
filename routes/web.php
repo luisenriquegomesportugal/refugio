@@ -24,7 +24,6 @@ Route::get('/', [InicioController::class, "pagina"])->name('inicio');
 Route::post('refukids/salvar', [RefukidsController::class, "salvar"])->name('refukids.salvar');
 Route::get('refukids/cadastro', [RefukidsController::class, "cadastro"])->name('refukids.cadastro');
 
-
 // Admin
 Route::get('lideranca/login', [LoginLiderancaController::class, "redirect"])->name('lideranca.login');
 Route::get('lideranca/login/informacoes', [LoginLiderancaController::class, "callback"]);

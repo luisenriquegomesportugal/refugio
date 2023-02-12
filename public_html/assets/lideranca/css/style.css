@@ -5,7 +5,7 @@
     Name                 : Zenix
     Author               : DexignZone
     Author Portfolio     : https://themeforest.net/user/dexignzone/portfolio
-    
+
 
 
     Table of Sass Contents
@@ -17,7 +17,7 @@
         _mixin
         _variable
 
-    2. bootstrap 
+    2. bootstrap
         -Here goes all official bootstrap scss files
 
     3. Global/Base
@@ -9438,7 +9438,6 @@ svg.pulse-svg {
     [data-theme-version="dark"] .header-right .dropdown-menu {
       box-shadow: none; }
   .header-right .header-profile > a.nav-link {
-    border-left: 1px solid #EEEEEE;
     margin-left: 10px;
     padding: 0;
     padding-left: 20px;
@@ -9478,7 +9477,6 @@ svg.pulse-svg {
         padding-left: 0px;
         border-left: 0; } }
   .header-right .header-profile .dropdown-menu {
-    padding: 15px 0;
     min-width: 12.5rem; }
     .header-right .header-profile .dropdown-menu a:hover, .header-right .header-profile .dropdown-menu a:focus, .header-right .header-profile .dropdown-menu a.active {
       color: var(--primary); }
@@ -18655,7 +18653,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   border: none;
   overflow: hidden; }
 
-/* 
+/*
 svg text {
     font-weight: 600 !important;
 } */
@@ -25276,7 +25274,7 @@ table.dataTable.display tbody td {
     margin-bottom: -130px;
 	background-size:cover;
 	&>div{
-		
+
 	}
 } */
 .plus-icon {

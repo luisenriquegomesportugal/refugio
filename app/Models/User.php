@@ -12,13 +12,6 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable, SoftDeletes;
 
-    public const ADMINISTRADOR_ROLE = 0; 
-    public const PASTOR_ROLE = 1; 
-    public const SUPERVISOR_ROLE = 2; 
-    public const LIDER_ROLE = 3; 
-    public const NUCLEO_ROLE = 4;
-    public const MEMBRO_ROLE = 5;
-
     /**
      * The table associated with the model.
      *

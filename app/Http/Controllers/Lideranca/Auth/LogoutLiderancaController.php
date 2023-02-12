@@ -12,6 +12,6 @@ class LogoutLiderancaController extends Controller
         Auth::logout();
 
         return response()
-            ->redirectToRoute('portal.inicio');
+            ->redirectToRoute('inicio');
     }
 }
