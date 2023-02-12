@@ -15,7 +15,8 @@
           rel="stylesheet">
     <link href="{{ asset("/assets/lideranca/vendor/owl-carousel/owl.carousel.css") }}" rel="stylesheet">
     <link href="{{ asset("/assets/lideranca/css/style.css") }}" rel="stylesheet">
-
+    @yield('styles')
+    @livewireStyles
 </head>
 <body>
 
@@ -116,10 +117,10 @@
                         <span class="nav-text">Chamada</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="#">Refubabys</a></li>
-                        <li><a href="#">Refukids 1</a></li>
-                        <li><a href="#">Refukids 2</a></li>
-                        <li><a href="#">Refuteens</a></li>
+                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refubabys"]) }}">Refubabys</a></li>
+                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refukids1"]) }}">Refukids 1</a></li>
+                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refukids2"]) }}">Refukids 2</a></li>
+                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refuteens"]) }}">Refuteens</a></li>
                     </ul>
                 </li>
                 <li class="nav-label">Configuração</li>
@@ -140,6 +141,7 @@
         Content body start
     ***********************************-->
     <div class="content-body">
+        @yield('content')
     </div>
     <!--**********************************
         Content body end
@@ -163,21 +165,10 @@
 <!-- Required vendors -->
 <script src="{{ asset("/assets/lideranca/vendor/global/global.min.js") }}"></script>
 <script src="{{ asset("/assets/lideranca/vendor/bootstrap-select/dist/js/bootstrap-select.min.js") }}"></script>
-<script src="{{ asset("/assets/lideranca/vendor/chart.js/Chart.bundle.min.js") }}"></script>
-
-<!-- Chart piety plugin files -->
-<script src="{{ asset("/assets/lideranca/vendor/peity/jquery.peity.min.js") }}"></script>
-
-<!-- Apex Chart -->
-<script src="{{ asset("/assets/lideranca/vendor/apexchart/apexchart.js") }}"></script>
-
-<!-- Dashboard 1 -->
-<script src="{{ asset("/assets/lideranca/js/dashboard/dashboard-1.js") }}"></script>
-
-<script src="{{ asset("/assets/lideranca/vendor/owl-carousel/owl.carousel.js") }}"></script>
 <script src="{{ asset("/assets/lideranca/js/custom.js") }}"></script>
 <script src="{{ asset("/assets/lideranca/js/deznav-init.js") }}"></script>
 
-
+@yield('scripts')
+@livewireScripts
 </body>
 </html>

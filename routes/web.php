@@ -6,6 +6,7 @@ use App\Http\Controllers\Lideranca\RefukidsLiderancaController;
 use App\Http\Controllers\Portal\InicioController;
 use App\Http\Controllers\Portal\RefukidsController;
 use App\Http\Controllers\Lideranca\DashboardLiderancaController;
+use App\Http\Livewire\Lideranca\Refukids\ChamadaRefukidsLiderancaLivewire;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,5 +35,6 @@ Route::middleware('auth')
         Route::get('lideranca', [DashboardLiderancaController::class, "pagina"])->name('lideranca.inicio');
         Route::get('lideranca/logout', [LogoutLiderancaController::class, "execute"])->name('lideranca.logout');
         Route::get('lideranca/refukids', [RefukidsLiderancaController::class, "pagina"])->name('lideranca.refukids');
+        Route::get('lideranca/refukids/chamada/{turma}', ChamadaRefukidsLiderancaLivewire::class)->name('lideranca.refukids.chamada');
     });
 
