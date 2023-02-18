@@ -15,8 +15,9 @@
           rel="stylesheet">
     <link href="{{ asset("/assets/lideranca/vendor/owl-carousel/owl.carousel.css") }}" rel="stylesheet">
     <link href="{{ asset("/assets/lideranca/css/style.css") }}" rel="stylesheet">
-    @yield('styles')
     @livewireStyles
+
+    @stack('styles')
 </head>
 <body>
 
@@ -117,10 +118,10 @@
                         <span class="nav-text">Chamada</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refubabys"]) }}">Refubabys</a></li>
-                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refukids1"]) }}">Refukids 1</a></li>
-                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refukids2"]) }}">Refukids 2</a></li>
-                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refuteens"]) }}">Refuteens</a></li>
+                        <li><a href="{{ route("lideranca.refukids.turma", ["turma" => "refubabys"]) }}">Refubabys</a></li>
+                        <li><a href="{{ route("lideranca.refukids.turma", ["turma" => "refukids1"]) }}">Refukids 1</a></li>
+                        <li><a href="{{ route("lideranca.refukids.turma", ["turma" => "refukids2"]) }}">Refukids 2</a></li>
+                        <li><a href="{{ route("lideranca.refukids.turma", ["turma" => "refuteens"]) }}">Refuteens</a></li>
                     </ul>
                 </li>
                 <li class="nav-label">Configuração</li>
@@ -141,7 +142,11 @@
         Content body start
     ***********************************-->
     <div class="content-body">
-        @yield('content')
+        @if(isset($slot))
+            {{ $slot }}
+        @else
+            @yield('conteudo')
+        @endif
     </div>
     <!--**********************************
         Content body end
@@ -167,8 +172,8 @@
 <script src="{{ asset("/assets/lideranca/vendor/bootstrap-select/dist/js/bootstrap-select.min.js") }}"></script>
 <script src="{{ asset("/assets/lideranca/js/custom.js") }}"></script>
 <script src="{{ asset("/assets/lideranca/js/deznav-init.js") }}"></script>
-
-@yield('scripts')
 @livewireScripts
+
+@stack('scripts')
 </body>
 </html>

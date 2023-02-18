@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('turma_chamada', function (Blueprint $table) {
-            $table->id();
-            $table->string('turma_id');
-            $table->date('dia');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('turma', function (Blueprint $table) {
+            $table->primary('id');
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('turma_chamada');
+        Schema::table('turma', function (Blueprint $table) {
+            $table->dropPrimary('id');
+        });
     }
 };

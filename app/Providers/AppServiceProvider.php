@@ -10,6 +10,8 @@ use App\Repositories\Providers\Mysql\MembroRepository;
 use App\Repositories\Providers\Mysql\RedeRepository;
 use App\Repositories\Providers\Mysql\RefukidsRepository;
 use App\Repositories\Providers\Mysql\UserRepository;
+use Carbon\Carbon;
+use Illuminate\Support\Pluralizer;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Carbon::setLocale($this->app->getLocale());
+        Pluralizer::useLanguage('portuguese');
     }
 }

@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('turma_chamada', function (Blueprint $table) {
-            $table->id();
-            $table->string('turma_id');
-            $table->date('dia');
+        Schema::create('turma', function (Blueprint $table) {
+            $table->string('id');
+            $table->string('nome');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('turma_chamada');
+        Schema::dropIfExists('turma');
     }
 };
