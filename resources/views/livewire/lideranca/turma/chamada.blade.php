@@ -44,8 +44,9 @@
                                 <td>
                                     <div class="d-flex action-button">
                                         <a href="javascript:void(0);" class="btn btn-info btn-xs light px-2">
-                                            <i class="fa fa-pen"></i>
-                                            Cadastrar presentes
+                                            <i class="fa fa-pen me-2"></i>
+                                            <span class="d-none d-md-inline">Cadastrar presentes</span>
+                                            <span class="d-inline d-md-none">Presentes</span>
                                         </a>
                                     </div>
                                 </td>
