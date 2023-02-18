@@ -21,7 +21,7 @@ class TurmaChamada extends Model
     }
 
     public function presentes() {
-        return $this->hasManyThrough(Membro::class, TurmaChamadaPresentes::class, "turma_chamada_id", "membro_id")
+        return $this->hasManyThrough(Membro::class, TurmaChamadaPresentes::class, "membro_id", "id")
             ->orderBy("nome");
     }
 }
