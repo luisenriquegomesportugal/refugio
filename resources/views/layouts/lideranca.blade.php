@@ -118,10 +118,10 @@
                         <span class="nav-text">Chamada</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="{{ route("lideranca.refukids.turma", ["turma" => "refubabys"]) }}">Refubabys</a></li>
-                        <li><a href="{{ route("lideranca.refukids.turma", ["turma" => "refukids1"]) }}">Refukids 1</a></li>
-                        <li><a href="{{ route("lideranca.refukids.turma", ["turma" => "refukids2"]) }}">Refukids 2</a></li>
-                        <li><a href="{{ route("lideranca.refukids.turma", ["turma" => "refuteens"]) }}">Refuteens</a></li>
+                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refubabys"]) }}">Refubabys</a></li>
+                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refukids1"]) }}">Refukids 1</a></li>
+                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refukids2"]) }}">Refukids 2</a></li>
+                        <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refuteens"]) }}">Refuteens</a></li>
                     </ul>
                 </li>
                 <li class="nav-label">Configuração</li>

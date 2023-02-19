@@ -35,6 +35,7 @@ Route::middleware('auth')
         Route::get('lideranca', [DashboardLiderancaController::class, "pagina"])->name('lideranca.inicio');
         Route::get('lideranca/logout', [LogoutLiderancaController::class, "execute"])->name('lideranca.logout');
         Route::get('lideranca/refukids', [RefukidsLiderancaController::class, "pagina"])->name('lideranca.refukids');
-        Route::get('lideranca/refukids/turma/{turma}', [RefukidsTurmaLiderancaController::class, "pagina"])->name('lideranca.refukids.turma');
+        Route::get('lideranca/refukids/turma/{turma}', [RefukidsTurmaLiderancaController::class, "turma"])->name('lideranca.refukids.chamada');
+        Route::get('lideranca/refukids/turma/{turma}/{turma_chamada}', [RefukidsTurmaLiderancaController::class, "turma_chamada"])->name('lideranca.refukids.chamada.presentes');
     });
 
