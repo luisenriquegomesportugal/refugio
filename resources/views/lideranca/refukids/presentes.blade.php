@@ -9,14 +9,21 @@
 @section('conteudo')
     <div class="container-fluid">
         <div class="row page-titles mx-0">
-            <div class="col-sm-6 p-md-0">
-                <div class="welcome-text">
-                    <h4>Chamada Refukids</h4>
-                    <span>{{ $turma->nome }}</span>
-                </div>
+            <div class="col-1 d-flex justify-content-center align-items-center">
+                <a href="{{ back()->getTargetUrl() }}">
+                    <i class="fa fa-2x fa-arrow-left"></i>
+                </a>
             </div>
-            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                <div class="welcome-text">
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Chamada Refukids</h4>
+                            <span>{{ $turma->nome }}</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <div class="welcome-text">
                     <span>
                         @if(\Carbon\Carbon::parse($turmaChamada->dia)->isCurrentDay())
                             Hoje
@@ -24,6 +31,8 @@
                             {{ \Carbon\Carbon::parse($turmaChamada->dia)->format('d/m/Y') }}
                         @endif
                     </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

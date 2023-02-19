@@ -10,45 +10,47 @@
                     <th>
                         <b>Dt. Nascimento</b>
                     </th>
-                    <th>
-                        <b>#</b>
-                    </th>
+                    @if(\Carbon\Carbon::parse($turmaChamada->dia)->isCurrentDay())
+                        <th>
+                            <b>#</b>
+                        </th>
+                    @endif
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($membros as $membro)
                     <tr>
                         <td>
-                            {{ $membro->nome }}
+                            {{ $membro->crianca->nome }}
                         </td>
                         <td>
-                            {{ \Carbon\Carbon::parse($membro->nascimento)->format('d/m/Y') }}
+                            {{ \Carbon\Carbon::parse($membro->crianca->nascimento)->format('d/m/Y') }}
                         </td>
-                        <td>
-                            <div class="d-flex action-button">
-                                @if($turmaChamada->presentes->contains($membro))
-                                    <a wire:click.prevent="removerPresenca({{$membro->id}})"
-                                       class="btn btn-danger btn-xs light px-2">
-                                            <span wire:loading.remove>
-                                                <i class="fa fa-remove me-2"></i> Remover
-                                            </span>
-                                        <span wire:loading>
-                                                <i class="fa fa-spinner fa-spin"></i>
-                                            </span>
-                                    </a>
-                                @else
-                                    <a wire:click.prevent="cadastrarPresenca({{$membro->id}})"
-                                       class="btn btn-success btn-xs light px-2">
-                                            <span wire:loading.remove>
-                                                <i class="fa fa-check me-2"></i> Presente
-                                            </span>
-                                        <span wire:loading>
-                                                <i class="fa fa-spinner fa-spin"></i>
-                                            </span>
-                                    </a>
-                                @endif
-                            </div>
-                        </td>
+                        @if(\Carbon\Carbon::parse($turmaChamada->dia)->isCurrentDay())
+                            <td>
+                                <div class="d-flex action-button">
+                                    @if($turmaChamada->presentes->contains($membro->crianca))
+                                        <a wire:click.prevent="removerPresenca({{$membro->crianca->id}})"
+                                           class="btn btn-danger btn-xs light px-2">
+                                            <i class="fa fa-trash me-2" wire:loading.remove
+                                               wire:target="removerPresenca({{$membro->crianca->id}})"></i>
+                                            <i class="fa fa-spinner fa-spin me-2" wire:loading
+                                               wire:target="removerPresenca({{$membro->crianca->id}})"></i>
+                                            Remover
+                                        </a>
+                                    @else
+                                        <a wire:click.prevent="cadastrarPresenca({{$membro->crianca->id}})"
+                                           class="btn btn-success btn-xs light px-2">
+                                            <i class="fa fa-check me-2" wire:loading.remove
+                                               wire:target="cadastrarPresenca({{$membro->crianca->id}})"></i>
+                                            <i class="fa fa-spinner fa-spin me-2" wire:loading
+                                               wire:target="cadastrarPresenca({{$membro->crianca->id}})"></i>
+                                            Presente
+                                        </a>
+                                    @endif
+                                </div>
+                            </td>
+                        @endif
                     </tr>
                 @endforeach
                 </tbody>

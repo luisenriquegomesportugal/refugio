@@ -22,12 +22,20 @@ class Presentes extends Component
 
     public function cadastrarPresenca($membro_id)
     {
-        dd($this->turmaChamada, $membro_id);
+        $this->turmaChamada
+            ->presentes()
+            ->attach($membro_id);
+
+        $this->turmaChamada->refresh();
     }
 
     public function removerPresenca($membro_id)
     {
-        dd($this->turmaChamada, $membro_id);
+        $this->turmaChamada
+            ->presentes()
+            ->detach($membro_id);
+
+        $this->turmaChamada->refresh();
     }
 
     public function render()
