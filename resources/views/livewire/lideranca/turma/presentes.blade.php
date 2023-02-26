@@ -28,6 +28,10 @@
                                 {{ $loop->iteration }}
                             </td>
                             <td>
+                                @if($membro->foto)
+                                    <img class="rounded-circle me-2" width="35"
+                                         src="{{ \Illuminate\Support\Facades\Storage::url($membro->foto) }}" alt="">
+                                @endif
                                 {{ $membro->nome }}
                             </td>
                             <td>
