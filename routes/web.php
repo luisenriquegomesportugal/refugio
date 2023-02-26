@@ -4,9 +4,9 @@ use App\Http\Controllers\Lideranca\Auth\LoginLiderancaController;
 use App\Http\Controllers\Lideranca\Auth\LogoutLiderancaController;
 use App\Http\Controllers\Lideranca\DashboardLiderancaController;
 use App\Http\Controllers\Lideranca\Refukids\RefukidsLiderancaController;
+use App\Http\Controllers\Lideranca\Refukids\RefukidsTurmaLiderancaController;
 use App\Http\Controllers\Portal\InicioController;
 use App\Http\Controllers\Portal\RefukidsController;
-use App\Http\Controllers\Lideranca\Refukids\RefukidsTurmaLiderancaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +36,6 @@ Route::middleware('auth')
         Route::get('lideranca/logout', [LogoutLiderancaController::class, "execute"])->name('lideranca.logout');
         Route::get('lideranca/refukids', [RefukidsLiderancaController::class, "pagina"])->name('lideranca.refukids');
         Route::get('lideranca/refukids/turma/{turma}', [RefukidsTurmaLiderancaController::class, "turma"])->name('lideranca.refukids.chamada');
-        Route::get('lideranca/refukids/turma/{turma}/{turma_chamada}', [RefukidsTurmaLiderancaController::class, "turma_chamada"])->name('lideranca.refukids.chamada.presentes');
+        Route::get('lideranca/refukids/turma/{turma}/chamada/{turma_chamada}', [RefukidsTurmaLiderancaController::class, "turma_chamada"])->name('lideranca.refukids.chamada.presentes');
     });
 

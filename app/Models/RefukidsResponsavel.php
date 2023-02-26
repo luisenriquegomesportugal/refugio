@@ -2,9 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Database\Query\Builder;
+
 class RefukidsResponsavel extends Membro
 {
-    public function crianca() {
+    public static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(function (Builder $query) {
+            $query->distinct()
+                ->selectRaw('membros.*')
+                ->join('refukids', 'refukids.responsavel_id', '=', 'membros.id');
+        });
+    }
+
+    public function crianca()
+    {
         return $this->belongsToMany(RefukidsCrianca::class, "refukids", "responsavel_id", "crianca_id", "membro_id", "membro_id");
     }
 }

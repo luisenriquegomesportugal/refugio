@@ -10,12 +10,20 @@ class Turma extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
     protected $table = "turma";
     protected $fillable = ["id", "nome"];
 
     public $incrementing = false;
-    public function chamadas() {
+
+    public function chamadas()
+    {
         return $this->hasMany(TurmaChamada::class)
             ->orderByDesc('dia');
+    }
+
+    public function faixa_etaria()
+    {
+        return $this->hasOne(TurmaFaixaEtaria::class);
     }
 }

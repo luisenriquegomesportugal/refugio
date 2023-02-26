@@ -5,6 +5,9 @@
                 <thead>
                 <tr>
                     <th>
+                        #
+                    </th>
+                    <th>
                         <b>Nome</b>
                     </th>
                     <th>
@@ -22,6 +25,9 @@
                     @foreach($membros as $membro)
                         <tr>
                             <td>
+                                {{ $loop->iteration }}
+                            </td>
+                            <td>
                                 {{ $membro->nome }}
                             </td>
                             <td>
@@ -30,7 +36,6 @@
                             <td>
                                 <div class="d-flex action-button">
                                     @if($turmaChamada->presentes->contains($membro))
-
                                         <a wire:click.prevent="removerPresenca({{$membro->id}})"
                                            class="btn btn-success btn-xs light px-2">
                                             <i class="fa fa-check me-2" wire:loading.remove
