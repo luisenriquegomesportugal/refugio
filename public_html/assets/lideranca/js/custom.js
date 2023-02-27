@@ -379,25 +379,43 @@
 		jQuery('.dz-theme-mode').on('click',function(){
 			jQuery(this).toggleClass('active');
 
-			if(jQuery(this).hasClass('active')){
-				jQuery('body').attr('data-theme-version','dark');
-			}else{
-				jQuery('body').attr('data-theme-version','light');
-			}
-		});
+            if (jQuery(this).hasClass('active')) {
+                jQuery('body').attr('data-theme-version', 'dark');
+            } else {
+                jQuery('body').attr('data-theme-version', 'light');
+            }
+        });
 
 
-	}
+    }
+     var handleImageModal = function () {
+
+         var modal = document.getElementById("default-modal-image");
+         var modalImg = document.getElementById("default-modal-image-source");
+         var captionText = document.getElementById("default-modal-image-caption");
+
+         jQuery(document).on("click", "img.default-modal-image-preview", function () {
+             modal.style.display = "block";
+             modalImg.src = this.src;
+             captionText.innerHTML = this.alt;
+         });
+
+         jQuery(document).on("click", "#default-modal-image, #default-modal-image-close", function () {
+             modal.style.display = "none";
+             modalImg.src = null;
+             captionText.innerHTML = null;
+         });
+     }
 
 
-	/* Function ============ */
-	return {
-		init:function(){
-			handleTheme();
-			handleMetisMenu();
-			handleAllChecked();
-			handleNavigation();
-			handleCurrentActive();
+     /* Function ============ */
+     return {
+         init: function () {
+             handleTheme();
+             handleMetisMenu();
+             handleAllChecked();
+             handleNavigation();
+             handleCurrentActive();
 			handleMiniSidebar();
 			handleMinHeight();
 			handleDataAction();
@@ -419,7 +437,8 @@
 			handleChatSidebar();
 			handleCkEditor();
 			handleImageSelect();
-			handleThemeMode();
+             handleThemeMode();
+             handleImageModal();
 		},
 
 
@@ -444,13 +463,16 @@
 
 /* Document.ready Start */
 jQuery(document).ready(function() {
-	$('[data-toggle="popover"]').popover();
+    $('[data-toggle="popover"]').popover();
+
     'use strict';
-	Zenix.init();
-	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-	  return new bootstrap.Popover(popoverTriggerEl)
-	})
+
+    Zenix.init();
+
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
 });
 /* Document.ready END */
 
@@ -458,16 +480,19 @@ jQuery(document).ready(function() {
 jQuery(window).on('load',function () {
 	'use strict';
 	Zenix.load();
-	setTimeout(function(){
+
+    setTimeout(function(){
 			Zenix.handleMenuPosition();
 	}, 1000);
 });
 /*  Window Load END */
-/* Window Resize START */
+
+ /* Window Resize START */
 jQuery(window).on('resize',function () {
 	'use strict';
 	Zenix.resize();
-	setTimeout(function(){
+
+    setTimeout(function(){
 			Zenix.handleMenuPosition();
 	}, 1000);
 });

@@ -151,18 +151,16 @@
     <!--**********************************
         Content body end
     ***********************************-->
-
-    <!--**********************************
-       Support ticket button start
-    ***********************************-->
-
-    <!--**********************************
-       Support ticket button end
-    ***********************************-->
 </div>
 <!--**********************************
     Main wrapper end
 ***********************************-->
+
+<div id="default-modal-image">
+    <span id="default-modal-image-close">&times;</span>
+    <img id="default-modal-image-source">
+    <div id="default-modal-image-caption"></div>
+</div>
 
 <!--**********************************
     Scripts

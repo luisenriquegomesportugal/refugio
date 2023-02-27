@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\Lideranca\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Repositories\Interfaces\UserRepositoryInterface;
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -47,7 +44,6 @@ class LoginLiderancaController extends Controller
 
         Auth::loginUsingId(1);
 
-        return response()
-            ->redirectToRoute('lideranca.inicio');
+        return redirect()->intended(route('lideranca.inicio'));
     }
 }
