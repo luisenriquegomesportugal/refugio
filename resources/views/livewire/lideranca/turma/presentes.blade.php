@@ -66,6 +66,9 @@
                     @foreach($turmaChamada->presentes as $membro)
                         <tr>
                             <td>
+                                {{ $loop->iteration }}
+                            </td>
+                            <td>
                                 {{ $membro->nome }}
                             </td>
                             <td>
