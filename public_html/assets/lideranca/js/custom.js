@@ -394,13 +394,17 @@
          var modalImg = document.getElementById("default-modal-image-source");
          var captionText = document.getElementById("default-modal-image-caption");
 
-         jQuery(document).on("click", "img.default-modal-image-preview", function () {
+         jQuery(document).on("click", "img.default-modal-image-preview", function (e) {
+             e.preventDefault();
+
              modal.style.display = "block";
              modalImg.src = this.src;
              captionText.innerHTML = this.alt;
          });
 
-         jQuery(document).on("click", "#default-modal-image, #default-modal-image-close", function () {
+         jQuery(document).on("click", "#default-modal-image, #default-modal-image-close", function (e) {
+             e.preventDefault();
+
              modal.style.display = "none";
              modalImg.src = null;
              captionText.innerHTML = null;
