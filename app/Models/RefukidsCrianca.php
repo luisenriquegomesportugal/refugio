@@ -16,8 +16,7 @@ class RefukidsCrianca extends Membro
                 ->join('refukids', 'refukids.crianca_id', '=', 'membros.id');
         });
     }
-
-    public function responsavel()
+    public function responsaveis()
     {
         return $this->belongsToMany(RefukidsResponsavel::class, "refukids", "crianca_id", "responsavel_id", "membro_id", "membro_id");
     }
