@@ -10,9 +10,9 @@
 
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset("/assets/lideranca/images/favicon.png") }}">
-    <link rel="stylesheet" href="{{ asset("/assets/lideranca/vendor/chartist/css/chartist.min.css") }}">
     <link href="{{ asset("/assets/lideranca/vendor/bootstrap-select/dist/css/bootstrap-select.min.css") }}"
           rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset("/assets/lideranca/vendor/toastr/css/toastr.min.css") }}">
     <link href="{{ asset("/assets/lideranca/vendor/owl-carousel/owl.carousel.css") }}" rel="stylesheet">
     <link href="{{ asset("/assets/lideranca/css/style.css") }}" rel="stylesheet">
     @livewireStyles
@@ -168,6 +168,7 @@
 <!-- Required vendors -->
 <script src="{{ asset("/assets/lideranca/vendor/global/global.min.js") }}"></script>
 <script src="{{ asset("/assets/lideranca/vendor/bootstrap-select/dist/js/bootstrap-select.min.js") }}"></script>
+<script src="{{ asset("/assets/lideranca/vendor/toastr/js/toastr.min.js") }}"></script>
 <script src="{{ asset("/assets/lideranca/js/custom.js") }}"></script>
 <script src="{{ asset("/assets/lideranca/js/deznav-init.js") }}"></script>
 @livewireScripts

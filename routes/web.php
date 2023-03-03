@@ -7,6 +7,7 @@ use App\Http\Controllers\Lideranca\Refukids\RefukidsLiderancaController;
 use App\Http\Controllers\Lideranca\Refukids\RefukidsTurmaLiderancaController;
 use App\Http\Controllers\Portal\InicioController;
 use App\Http\Controllers\Portal\RefukidsController;
+use App\Http\Controllers\ImagemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 // Home
 Route::get('/', [InicioController::class, "pagina"])->name('inicio');
 Route::get('/politica-de-privacidade', [InicioController::class, "politica"])->name('politica');
+Route::get('/download', [ImagemController::class, "download"])->name('download');
+
+//Refukids
 Route::post('refukids/salvar', [RefukidsController::class, "salvar"])->name('refukids.salvar');
 Route::get('refukids/cadastro', [RefukidsController::class, "cadastro"])->name('refukids.cadastro');
 
