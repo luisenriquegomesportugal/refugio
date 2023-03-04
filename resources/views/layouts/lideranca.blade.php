@@ -106,12 +106,15 @@
         <div class="deznav-scroll">
             <ul class="metismenu" id="menu">
                 <li class="nav-label first">Refukids</li>
+                @can(\App\Libraries\Permissoes::VISUALIZAR_LISTAGEM_DA_REFUKIDS)
                 <li>
                     <a class="ai-icon" href="javascript:void()">
                         <i class="flaticon-381-list"></i>
                         <span class="nav-text">Lista</span>
                     </a>
                 </li>
+                @endcan
+                @can(\App\Libraries\Permissoes::FAZER_CHAMADA_DA_REFUKIDS)
                 <li>
                     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-381-notepad"></i>
@@ -124,6 +127,8 @@
                         <li><a href="{{ route("lideranca.refukids.chamada", ["turma" => "refuteens"]) }}">Refuteens</a></li>
                     </ul>
                 </li>
+                @endcan
+                @can(\App\Libraries\Permissoes::LIBERAR_ACESSO)
                 <li class="nav-label">Configuração</li>
                 <li>
                     <a class="ai-icon" href="javascript:void()">
@@ -131,6 +136,7 @@
                         <span class="nav-text">Liberar acesso</span>
                     </a>
                 </li>
+                @endcan
             </ul>
         </div>
     </div>

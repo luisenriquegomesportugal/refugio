@@ -32,4 +32,9 @@ class User extends Authenticatable
         "foto",
         "acesso"
     ];
+
+    public function permissoes()
+    {
+        return $this->belongsToMany(Permissao::class, 'permissoes_usuario', "usuario_id", "permissao_id");
+    }
 }

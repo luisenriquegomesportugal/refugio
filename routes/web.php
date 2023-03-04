@@ -38,8 +38,16 @@ Route::middleware('auth')
     ->group(function() {
         Route::get('lideranca', [DashboardLiderancaController::class, "pagina"])->name('lideranca.inicio');
         Route::get('lideranca/logout', [LogoutLiderancaController::class, "execute"])->name('lideranca.logout');
-        Route::get('lideranca/refukids', [RefukidsLiderancaController::class, "pagina"])->name('lideranca.refukids');
-        Route::get('lideranca/refukids/turma/{turma}', [RefukidsTurmaLiderancaController::class, "turma"])->name('lideranca.refukids.chamada');
-        Route::get('lideranca/refukids/turma/{turma}/chamada/{turma_chamada}', [RefukidsTurmaLiderancaController::class, "turma_chamada"])->name('lideranca.refukids.chamada.presentes');
+
+        Route::get('lideranca/refukids', [RefukidsLiderancaController::class, "pagina"])
+            ->name('lideranca.refukids');
+
+        Route::get('lideranca/refukids/turma/{turma}', [RefukidsTurmaLiderancaController::class, "turma"])
+            ->middleware("can:" . \App\Libraries\Permissoes::FAZER_CHAMADA_DA_REFUKIDS)
+            ->name('lideranca.refukids.chamada');
+
+        Route::get('lideranca/refukids/turma/{turma}/chamada/{turma_chamada}', [RefukidsTurmaLiderancaController::class, "turma_chamada"])
+            ->middleware("can:" . \App\Libraries\Permissoes::FAZER_CHAMADA_DA_REFUKIDS)
+            ->name('lideranca.refukids.chamada.presentes');
     });
 

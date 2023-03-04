@@ -8,7 +8,7 @@
                         <b>Nome</b>
                     </th>
                     <th>
-                        <b>Observações</b>
+                        <b>Observações/Alergias</b>
                     </th>
                     @if(\Carbon\Carbon::parse($turmaChamada->dia)->isCurrentDay())
                         <th>
@@ -25,7 +25,7 @@
                                 <div class="media align-items-center style-1">
                                     @if($membro->foto)
                                         <img src="{{ route('download', ['file' => $membro->foto]) }}"
-                                             class="img-fluid default-modal-image-preview" alt=""
+                                             class="img-fluid object-fit-cover default-modal-image-preview" alt=""
                                              style="width: 50px; height: 50px">
                                     @else
                                         <span
@@ -77,7 +77,7 @@
                                     <div class="media align-items-center style-1">
                                         @if($membro->foto)
                                             <img src="{{ route('download', ['file' => $membro->foto]) }}"
-                                                 class="img-fluid default-modal-image-preview" alt=""
+                                                 class="img-fluid object-fit-cover default-modal-image-preview" alt=""
                                                  style="width: 50px; height: 50px">
                                         @else
                                             <span
@@ -126,7 +126,7 @@
                                 <div class="media align-items-center style-1">
                                     @if($membro->foto)
                                         <img src="{{ route('download', ['file' => $membro->foto]) }}"
-                                             class="img-fluid default-modal-image-preview" alt=""
+                                             class="img-fluid object-fit-cover default-modal-image-preview" alt=""
                                              style="width: 50px; height: 50px">
                                     @else
                                         <span
