@@ -21,7 +21,7 @@ class TurmaChamada extends Model
     }
 
     public function presentes() {
-        return $this->belongsToMany(Membro::class, "turma_chamada_presentes", "membro_id", "turma_chamada_id")
+        return $this->belongsToMany(Membro::class, "turma_chamada_presentes", "turma_chamada_id", "membro_id")
             ->withTrashed()
             ->orderBy("nome");
     }
