@@ -14,8 +14,10 @@ class LoginLiderancaController extends Controller
 {
     public function redirect()
     {
-//        Auth::loginUsingId(1);
-        return Socialite::driver('google')->redirect();
+        Auth::loginUsingId(1);
+        return redirect()->intended(route('lideranca.inicio'));
+
+//        return Socialite::driver('google')->redirect();
     }
 
     public function callback(UserRepositoryInterface $userRepository)
