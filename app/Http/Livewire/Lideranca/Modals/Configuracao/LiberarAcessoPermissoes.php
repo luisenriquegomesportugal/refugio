@@ -7,8 +7,12 @@ use Livewire\Component;
 
 class LiberarAcessoPermissoes extends Component
 {
-    public User $usuario;
+    public $usuarios;
+    public $usuario;
 
+    public function selecionarUsuario(User $usuario) {
+        $this->usuario = $usuario;
+    }
 
     public function salvarPermissoes($permissao, $checked)
     {
