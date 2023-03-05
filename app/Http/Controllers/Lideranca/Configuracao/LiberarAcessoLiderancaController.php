@@ -11,7 +11,7 @@ class LiberarAcessoLiderancaController extends Controller
     public function pagina()
     {
         $usuarios = User::with('permissoes')
-            ->paginate();
+            ->get();
 
         return view('lideranca.configuracao.liberar-acesso', compact('usuarios'));
     }
