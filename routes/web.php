@@ -8,6 +8,7 @@ use App\Http\Controllers\Lideranca\Refukids\RefukidsTurmaLiderancaController;
 use App\Http\Controllers\Portal\InicioController;
 use App\Http\Controllers\Portal\RefukidsController;
 use App\Http\Controllers\ImagemController;
+use App\Http\Controllers\Lideranca\Configuracao\LiberarAcessoLiderancaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,5 +50,10 @@ Route::middleware('auth')
         Route::get('lideranca/refukids/turma/{turma}/chamada/{turma_chamada}', [RefukidsTurmaLiderancaController::class, "turma_chamada"])
             ->middleware("can:" . \App\Libraries\Permissoes::FAZER_CHAMADA_DA_REFUKIDS)
             ->name('lideranca.refukids.chamada.presentes');
+
+        Route::get('lideranca/configuracao/liberar-acesso', [LiberarAcessoLiderancaController::class, "pagina"])
+            ->middleware("can:" . \App\Libraries\Permissoes::LIBERAR_ACESSO)
+            ->name('lideranca.configuracao.liberar-acesso');
+
     });
 

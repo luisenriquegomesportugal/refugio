@@ -131,7 +131,7 @@
                 @can(\App\Libraries\Permissoes::LIBERAR_ACESSO)
                 <li class="nav-label">Configuração</li>
                 <li>
-                    <a class="ai-icon" href="javascript:void()">
+                    <a class="ai-icon" href="{{ route('lideranca.configuracao.liberar-acesso') }}">
                         <i class="flaticon-381-key"></i>
                         <span class="nav-text">Liberar acesso</span>
                     </a>

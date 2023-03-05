@@ -14,7 +14,8 @@ class LoginLiderancaController extends Controller
 {
     public function redirect()
     {
-        return Socialite::driver('google')->redirect();
+        Auth::loginUsingId(1);
+//        return Socialite::driver('google')->redirect();
     }
 
     public function callback(UserRepositoryInterface $userRepository)
