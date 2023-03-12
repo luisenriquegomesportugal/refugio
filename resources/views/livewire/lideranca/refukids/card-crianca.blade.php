@@ -48,7 +48,7 @@
                                 <div class="dropdown">
                                     <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false">{{ current(explode(' ', $responsavel->nome)) }} {{ last(explode(' ', $responsavel->nome)) }} ({{ $responsavel->telefone }})</a>
                                     <div class="dropdown-menu dropdown-menu-end" style="">
-                                        <a class="dropdown-item" href="wa.me/{{ str_replace('/[^\d]+/', '', $responsavel->telefone) }}">Whatsapp</a>
+                                        <a class="dropdown-item" href="https://wa.me/{{ str_replace('/[^\d]+/', '', $responsavel->telefone) }}">Whatsapp</a>
                                         <a class="dropdown-item" href="tel:{{ str_replace('/[^\d]+/', '', $responsavel->telefone) }}">Telefone</a>
                                     </div>
                                 </div>
