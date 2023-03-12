@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="d-flex col-lg-4 col-sm-6 col-12 order-2 order-lg-1">
-            <div class="d-flex align-items-start gap-3">
+            <div class="d-flex flex-row-reverse flex-sm-row align-items-start gap-3">
                 <div class="project-media list d-none d-sm-inline-flex order-1 order-sm-0">
                     @foreach(\App\Models\RefukidsCrianca::find($membro->id)->responsaveis as $responsavel)
                         @if($responsavel->foto)
@@ -39,7 +39,9 @@
                     <h5 class="mb-1 font-w500 text-black">Responsáveis</h5>
                     <ul>
                         @foreach(\App\Models\RefukidsCrianca::find($membro->id)->responsaveis as $responsavel)
-                            <li>{{ current(explode(' ', $responsavel->nome)) }} {{ last(explode(' ', $responsavel->nome)) }} (<a href="tel:{{ str_replace('/[^\d]+/', '', $responsavel->telefone) }}">{{ $responsavel->telefone }}</a>)</li>
+                            <li>
+                                <a href="tel:{{ str_replace('/[^\d]+/', '', $responsavel->telefone) }}">{{ current(explode(' ', $responsavel->nome)) }} {{ last(explode(' ', $responsavel->nome)) }} ({{ $responsavel->telefone }})</a>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
