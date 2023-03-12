@@ -4,8 +4,10 @@
             <div class="d-flex flex-grow-1 flex-lg-grow-0 flex-row-reverse flex-sm-row align-items-start gap-3">
                 <div class="project-media">
                     @if($membro->foto)
-                        <img src="{{ route('download', ['file' => $membro->foto]) }}"
-                             class="object-fit-cover" alt="">
+                        <a href="{{ route('download', ['file' => $membro->foto]) }}" data-exthumbimage="{{ route('download', ['file' => $membro->foto]) }}" data-src="{{ route('download', ['file' => $membro->foto]) }}">
+                            <img src="{{ route('download', ['file' => $membro->foto]) }}"
+                                 class="object-fit-cover" alt="">
+                        </a>
                     @else
                         <span class="img-placeholder text-uppercase @if($membro->sexo == 'M') bgl-info text-info @else bgl-danger text-danger @endif">
                             {{ $membro->nome[0] }}{{ last(explode(' ', $membro->nome))[0] }}
@@ -27,7 +29,10 @@
                 <div class="project-media list d-none d-sm-inline-flex order-1 order-sm-0">
                     @foreach(\App\Models\RefukidsCrianca::find($membro->id)->responsaveis as $responsavel)
                         @if($responsavel->foto)
-                            <img src="{{ route('download', ['file' => $responsavel->foto]) }}" alt="" title="{{ $responsavel->nome }}">
+
+                            <a href="{{ route('download', ['file' => $responsavel->foto]) }}" data-exthumbimage="{{ route('download', ['file' => $responsavel->foto]) }}" data-src="{{ route('download', ['file' => $responsavel->foto]) }}">
+                                <img src="{{ route('download', ['file' => $responsavel->foto]) }}" alt="" title="{{ $responsavel->nome }}">
+                            </a>
                         @else
                             <span class="img-placeholder text-uppercase @if($responsavel->sexo == 'M') bgl-info text-info @else bgl-danger text-danger @endif" title="{{ $responsavel->nome }}">
                             {{ $responsavel->nome[0] }}{{ last(explode(' ', $responsavel->nome))[0] }}
