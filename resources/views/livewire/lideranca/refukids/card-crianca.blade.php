@@ -59,8 +59,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-2 col-sm-3 col-12 @if($colunaAcao) order-5 order-sm-1 @else order-1 @endif order-lg-3 mt-4 mt-sm-0">
-            <div class="d-flex project-status align-items-start justify-content-between justify-content-sm-end gap-3">
+        <div class="col-lg-2 col-sm-3 col-12 align-items-start @if($colunaAcao) order-5 order-sm-1 @else order-1 @endif order-lg-3 mt-4 mt-sm-0">
+            <div class="d-flex project-status align-items-center justify-content-between justify-content-sm-end gap-3">
                 @if($colunaAcao)
                     @livewire($colunaAcao, ['turma' => $turma, 'turmaChamada' => $turmaChamada, 'membro' => $membro], key($membro->id))
                 @endif
