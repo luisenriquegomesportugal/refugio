@@ -1,7 +1,7 @@
 <div class="card m-0">
     <div class="project-info gap-3">
         <div class="d-flex col-lg-3 col-sm-9 col-12 order-0 order-lg-0">
-            <div class="d-flex flex-grow-1 flex-lg-grow-0 flex-row-reverse flex-sm-row align-items-start">
+            <div class="d-flex flex-grow-1 flex-lg-grow-0 flex-row-reverse flex-sm-row align-items-start gap-3">
                 <div class="project-media">
                     @if($membro->foto)
                         <img src="{{ route('download', ['file' => $membro->foto]) }}"
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="d-flex col-lg-4 col-sm-6 col-12 order-2 order-lg-1">
-            <div class="d-flex align-items-start">
+            <div class="d-flex align-items-start gap-3">
                 <div class="project-media list d-none d-sm-inline-flex order-1 order-sm-0">
                     @foreach(\App\Models\RefukidsCrianca::find($membro->id)->responsaveis as $responsavel)
                         @if($responsavel->foto)
