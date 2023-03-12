@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card  m-2 m-sm-0">
     <div class="project-info row-gap-3">
         <div class="d-flex col-lg-3 col-sm-10 col-12 order-0 order-lg-0">
             <div class="d-flex flex-grow-1 flex-lg-grow-0 flex-row-reverse flex-sm-row align-items-start gap-3">
