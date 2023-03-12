@@ -12,7 +12,7 @@
                         </span>
                     @endif
                 </div>
-                <div class="flex-grow-1">
+                <div class="flex-grow-1 flex-lg-grow-0">
                     <h5 class="mb-1 font-w500 text-black ellipsis-2">{{ $membro->nome }}</h5>
                     <span class="d-block">{{ $membro->sexo === 'M' ? 'Masculino' : 'Feminino' }}</span>
                     <span class="d-block">
