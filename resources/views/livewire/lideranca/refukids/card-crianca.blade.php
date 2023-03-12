@@ -2,7 +2,7 @@
     <div class="project-info">
         <div class="col-lg-3 col-12 order-0 order-lg-0">
             <div class="d-flex flex-row-reverse flex-sm-row align-items-center">
-                <div class="project-media">
+                <div class="project-media me-2 me-sm-0">
                     @if($membro->foto)
                         <img src="{{ route('download', ['file' => $membro->foto]) }}"
                              class="object-fit-cover" alt="">
@@ -12,7 +12,7 @@
                         </span>
                     @endif
                 </div>
-                <div class="ms-2">
+                <div class="ms-0 ms-sm-2">
                     <h5 class="mb-1 font-w500 text-black ellipsis-2">{{ $membro->nome }}</h5>
                     <span class="d-block">{{ $membro->sexo === 'M' ? 'Masculino' : 'Feminino' }}</span>
                     <span class="d-block">
