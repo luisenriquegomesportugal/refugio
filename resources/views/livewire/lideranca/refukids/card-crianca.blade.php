@@ -1,7 +1,7 @@
 <div class="card m-0">
     <div class="project-info">
         <div class="col-lg-3 col-sm-9 col-12 order-0 order-lg-0">
-            <div class="d-flex flex-row-reverse flex-sm-row align-items-center">
+            <div class="d-flex flex-row-reverse flex-sm-row align-items-start">
                 <div class="project-media me-2 me-sm-0">
                     @if($membro->foto)
                         <img src="{{ route('download', ['file' => $membro->foto]) }}"
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="col-lg-4 col-sm-6 col-12 order-2 order-lg-1 mt-4 mt-lg-0">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-start">
                 <div class="project-media list d-none d-sm-inline-flex order-1 order-sm-0 ms-0 ms-lg-2">
                     @foreach(\App\Models\RefukidsCrianca::find($membro->id)->responsaveis as $responsavel)
                         @if($responsavel->foto)
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-sm-6 col-12 order-3 order-lg-2 mt-4 mt-lg-0">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-start">
                 <div class="ms-0 ms-sm-2">
                     <h5 class="mb-1 font-w500 text-black">Observações/Alergias</h5>
                     <span class="d-block ellipsis-2" title="{{ ucfirst($membro->observacao ?? '') }}">
@@ -54,15 +54,13 @@
                             {{ ucfirst($membro->observacao ?? '') }}
                         @else
                             Nenhuma
-                            <br />
-                            <br />
                         @endif
                     </span>
                 </div>
             </div>
         </div>
         <div class="col-lg-2 col-sm-3 col-12 @if($colunaAcao) order-5 order-sm-1 @else order-1 @endif order-lg-3 mt-4 mt-sm-0">
-            <div class="d-flex project-status align-items-center justify-content-between justify-content-sm-end gap-3">
+            <div class="d-flex project-status align-items-start justify-content-between justify-content-sm-end gap-3">
                 @if($colunaAcao)
                     @livewire($colunaAcao, ['turma' => $turma, 'turmaChamada' => $turmaChamada, 'membro' => $membro], key($membro->id))
                 @endif
