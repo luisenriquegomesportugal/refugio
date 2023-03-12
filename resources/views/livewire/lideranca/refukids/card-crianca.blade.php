@@ -1,6 +1,6 @@
 <div class="card m-0">
     <div class="project-info">
-        <div class="col-lg-3 col-sm-8 col-12 order-0 order-lg-0">
+        <div class="col-lg-3 col-sm-9 col-12 order-0 order-lg-0">
             <div class="d-flex flex-row-reverse flex-sm-row align-items-center">
                 <div class="project-media me-2 me-sm-0">
                     @if($membro->foto)
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-2 col-12 @if($colunaAcao) order-5 order-sm-1 @else order-1 @endif order-lg-3 mt-4 mt-lg-0">
+        <div class="col-lg-2 col-sm-3 col-12 @if($colunaAcao) order-5 order-sm-1 @else order-1 @endif order-lg-3 mt-4 mt-lg-0">
             <div class="d-flex project-status align-items-center justify-content-between justify-content-sm-end gap-3">
                 @if($colunaAcao)
                     @livewire($colunaAcao, ['turma' => $turma, 'turmaChamada' => $turmaChamada, 'membro' => $membro], key($membro->id))
