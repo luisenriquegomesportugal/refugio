@@ -12,7 +12,7 @@
                         </span>
                     @endif
                 </div>
-                <div class="ms-0 ms-sm-2">
+                <div class="ms-0 ms-sm-2 flex-grow-1">
                     <h5 class="mb-1 font-w500 text-black ellipsis-2">{{ $membro->nome }}</h5>
                     <span class="d-block">{{ $membro->sexo === 'M' ? 'Masculino' : 'Feminino' }}</span>
                     <span class="d-block">
@@ -24,7 +24,7 @@
         </div>
         <div class="col-lg-4 col-sm-6 col-12 order-2 order-lg-1 mt-4 mt-lg-0">
             <div class="d-flex align-items-center">
-                <div class="project-media list d-none d-sm-inline-flex order-1 order-sm-0 ms-2">
+                <div class="project-media list d-none d-sm-inline-flex order-1 order-sm-0 ms-0 ms-lg-2">
                     @foreach(\App\Models\RefukidsCrianca::find($membro->id)->responsaveis as $responsavel)
                         @if($responsavel->foto)
                             <img src="{{ route('download', ['file' => $responsavel->foto]) }}" alt="" title="{{ $responsavel->nome }}">
