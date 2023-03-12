@@ -1,10 +1,3 @@
-@push('styles')
-    <link rel="stylesheet" href="{{ asset("/assets/lideranca/vendor/lightgallery/css/lightgallery.min.css") }}">
-@endpush
-@push('scripts')
-    <script src="{{ asset("/assets/lideranca/vendor/lightgallery/js/lightgallery-all.min.js") }}"></script>
-@endpush
-
 <div class="card  m-2 m-sm-0">
     <div class="project-info row-gap-3">
         <div class="d-flex col-lg-3 col-sm-10 col-12 order-0 order-lg-0">
