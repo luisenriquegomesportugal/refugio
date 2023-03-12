@@ -1,7 +1,7 @@
 <div class="card m-0">
     <div class="project-info gap-3">
         <div class="d-flex col-lg-3 col-sm-9 col-12 order-0 order-lg-0">
-            <div class="d-flex flex-row-reverse flex-sm-row align-items-start">
+            <div class="d-flex flex-grow-1 flex-lg-grow-0 flex-row-reverse flex-sm-row align-items-start">
                 <div class="project-media">
                     @if($membro->foto)
                         <img src="{{ route('download', ['file' => $membro->foto]) }}"
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="d-flex col-lg-2 col-sm-2 col-12 align-items-start @if($colunaAcao) order-5 order-sm-1 @else order-1 @endif order-lg-3">
-            <div class="d-flex project-status align-items-center justify-content-between justify-content-sm-end">
+            <div class="project-status d-flex flex-grow-1 flex-lg-grow-0 align-items-center justify-content-between justify-content-sm-end">
                 @if($colunaAcao)
                     @livewire($colunaAcao, ['turma' => $turma, 'turmaChamada' => $turmaChamada, 'membro' => $membro], key($membro->id))
                 @endif
