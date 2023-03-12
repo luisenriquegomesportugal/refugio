@@ -25,7 +25,7 @@
                             @foreach ($refukids as $crianca)
                             <tr>
                                 <td>
-                                    @livewire('lideranca.refukids.card-crianca', ['membro' => $membro], key($membro->id))
+                                    @livewire('lideranca.refukids.card-crianca', ['membro' => $crianca], key($crianca->id))
                                 </td>
                             </tr>
                             @endforeach
