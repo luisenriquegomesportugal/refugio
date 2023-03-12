@@ -20,36 +20,18 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <table id="refukids">
-                        <thead>
-                            <tr>
-                                <th scope="col">Criança</th>
-                                <th scope="col">Sexo</th>
-                                <th scope="col">Nascimento</th>
-                                <th scope="col">1º responsavel</th>
-                                <th scope="col">Célula</th>
-                                <th scope="col">Telefone</th>
-                                <th scope="col">2º responsavel</th>
-                                <th scope="col">Célula</th>
-                                <th scope="col">Telefone</th>
-                            </tr>
-                        </thead>
+                    <table class="table table-borderless">
                         <tbody>
                             @foreach ($refukids as $crianca)
                             <tr>
-                                <td>{{$crianca->first()->crianca->nome}}</td>
-                                <td>{{$crianca->first()->crianca->sexo}}</td>
-                                <td>{{$crianca->first()->crianca->nascimento}}</td>
-                                <td>{{$crianca->first()->responsavel->nome}}</td>
-                                <td>{{$crianca->first()->responsavel->celula->nome}}</td>
-                                <td>{{$crianca->first()->responsavel->telefone}}</td>
-                                <td>{{$crianca->last()->responsavel->nome}}</td>
-                                <td>{{$crianca->last()->responsavel->celula->nome}}</td>
-                                <td>{{$crianca->last()->responsavel->telefone}}</td>
+                                <td>
+                                    @livewire('lideranca.refukids.card-crianca', ['membro' => $membro], key($membro->id))
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    {!! $refukids->links('pagination::default') !!}
                 </div>
             </div>
         </div>

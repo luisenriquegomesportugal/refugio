@@ -108,7 +108,7 @@
                 <li class="nav-label first">Refukids</li>
                 @can(\App\Libraries\Permissoes::VISUALIZAR_LISTAGEM_DA_REFUKIDS)
                 <li>
-                    <a class="ai-icon" href="javascript:void()">
+                    <a class="ai-icon" href="{{ route("lideranca.refukids") }}">
                         <i class="flaticon-381-list"></i>
                         <span class="nav-text">Lista</span>
                     </a>

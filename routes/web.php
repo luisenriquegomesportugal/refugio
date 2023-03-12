@@ -41,6 +41,7 @@ Route::middleware('auth')
         Route::get('lideranca/logout', [LogoutLiderancaController::class, "execute"])->name('lideranca.logout');
 
         Route::get('lideranca/refukids', [RefukidsLiderancaController::class, "pagina"])
+            ->middleware("can:" . \App\Libraries\Permissoes::VISUALIZAR_LISTAGEM_DA_REFUKIDS)
             ->name('lideranca.refukids');
 
         Route::get('lideranca/refukids/turma/{turma}', [RefukidsTurmaLiderancaController::class, "turma"])

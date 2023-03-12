@@ -11,8 +11,9 @@ class CardCrianca extends Component
 {
     public $membro;
 
-    public Turma $turma;
-    public TurmaChamada $turmaChamada;
+    public $turma = null;
+
+    public $turmaChamada = null;
 
     public $colunaAcao = null;
 
