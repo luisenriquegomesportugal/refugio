@@ -1,153 +1,19 @@
 <div class="row">
-    <div class="col">
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover style-1" id="refukids-chamada-presentes">
-                <thead>
-                <tr>
-                    <th>
-                        <b>Nome</b>
-                    </th>
-                    <th>
-                        <b>Observações/Alergias</b>
-                    </th>
-                    @if(\Carbon\Carbon::parse($turmaChamada->dia)->isCurrentDay())
-                        <th>
-                            <b>#</b>
-                        </th>
-                    @endif
-                </tr>
-                </thead>
-                <tbody>
+    <div class="col-12">
+            <table class="table table-borderless" id="refukids-chamada-presentes">
                 @if(\Carbon\Carbon::parse($turmaChamada->dia)->isCurrentDay())
-                    @foreach($turmaChamada->presentes as $membro)
+                    @foreach($membros as $membro)
                         <tr>
                             <td>
-                                <div class="media align-items-center style-1">
-                                    @if($membro->foto)
-                                        <img src="{{ route('download', ['file' => $membro->foto]) }}"
-                                             class="img-fluid object-fit-cover default-modal-image-preview" alt=""
-                                             style="width: 50px; height: 50px">
-                                    @else
-                                        <span
-                                            class="icon-name text-uppercase @if($membro->sexo == 'M') bgl-info text-info @else bgl-danger text-danger @endif">
-                                            {{ $membro->nome[0] }}{{ last(explode(' ', $membro->nome))[0] }}
-                                        </span>
-                                    @endif
-                                    <div class="media-body ms-3">
-                                        <h6>{{ $membro->nome }}</h6>
-                                        <span>
-                                            {{ \Carbon\Carbon::parse($membro->nascimento)->diffInYears(\Carbon\Carbon::now()) }}
-                                            {{ \Illuminate\Support\Str::plural('ano', \Carbon\Carbon::parse($membro->nascimento)->diffInYears(\Carbon\Carbon::now())) }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <a title="{{ ucfirst($membro->observacao) }}">
-                                    <p style="width: 100%; max-width: 550px;"
-                                       class="ellipsis-2">{{ ucfirst($membro->observacao) }}</p>
-                                </a>
-                            </td>
-                            <td>
-                                <div class="btn-group pull-right">
-                                    <button wire:click.prevent="removerPresenca({{$membro->id}})"
-                                       class="btn btn-success btn-xs light px-2 d-inline-flex align-items-center">
-                                        <i class="fa fa-check me-2" wire:loading.remove
-                                           wire:target="removerPresenca({{$membro->id}})"></i>
-                                        <i class="fa fa-spinner fa-spin me-2" wire:loading
-                                           wire:target="removerPresenca({{$membro->id}})"></i>
-                                        Presente
-                                    </button>
-                                    <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"></button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
-                                           data-bs-target="#turma-chamada-presentes"
-                                           wire:click.prevent="selecionarMembro({{$membro->id}})">Atualizar
-                                            foto</a>
-                                        <a class="dropdown-item" href="#">Ver responsáveis</a>
-                                    </div>
-                                </div>
+                                @livewire('lideranca.refukids.card-crianca', ['turma' => $turma, 'turmaChamada' => $turmaChamada, 'membro' => $membro, 'colunaAcao' => 'lideranca.turma.cadastrar-presenca'], key($membro->id))
                             </td>
                         </tr>
-                    @endforeach
-                    @foreach($membros as $membro)
-                        @unless($turmaChamada->presentes->contains($membro))
-                            <tr>
-                                <td>
-                                    <div class="media align-items-center style-1">
-                                        @if($membro->foto)
-                                            <img src="{{ route('download', ['file' => $membro->foto]) }}"
-                                                 class="img-fluid object-fit-cover default-modal-image-preview" alt=""
-                                                 style="width: 50px; height: 50px">
-                                        @else
-                                            <span
-                                                class="icon-name text-uppercase @if($membro->sexo == 'M') bgl-info text-info @else bgl-danger text-danger @endif">
-                                            {{ $membro->nome[0] }}{{ last(explode(' ', $membro->nome))[0] }}
-                                        </span>
-                                        @endif
-                                        <div class="media-body ms-3">
-                                            <h6>{{ $membro->nome }}</h6>
-                                            <span>
-                                            {{ \Carbon\Carbon::parse($membro->nascimento)->diffInYears(\Carbon\Carbon::now()) }}
-                                                {{ \Illuminate\Support\Str::plural('ano', \Carbon\Carbon::parse($membro->nascimento)->diffInYears(\Carbon\Carbon::now())) }}
-                                        </span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a title="{{ ucfirst($membro->observacao) }}">
-                                        <p style="width: 100%; max-width: 550px;"
-                                           class="ellipsis-2">{{ ucfirst($membro->observacao) }}</p>
-                                    </a>
-                                </td>
-                                <td>
-                                    <div class="btn-group pull-right">
-                                        <button wire:click.prevent="cadastrarPresenca({{$membro->id}})"
-                                           class="btn btn-danger btn-xs light px-2 d-inline-flex align-items-center">
-                                            <i class="fa fa-spinner fa-spin me-2" wire:loading
-                                               wire:target="cadastrarPresenca({{$membro->id}})"></i>
-                                            <i class="fa fa-times me-2" wire:loading.remove
-                                               wire:target="cadastrarPresenca({{$membro->id}})"></i>
-                                            Faltou
-                                        </button>
-                                        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Ver responsáveis</a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        @endunless
                     @endforeach
                 @else
                     @foreach($turmaChamada->presentes as $membro)
                         <tr>
                             <td>
-                                <div class="media align-items-center style-1">
-                                    @if($membro->foto)
-                                        <img src="{{ route('download', ['file' => $membro->foto]) }}"
-                                             class="img-fluid object-fit-cover default-modal-image-preview" alt=""
-                                             style="width: 50px; height: 50px">
-                                    @else
-                                        <span
-                                            class="icon-name text-uppercase @if($membro->sexo == 'M') bgl-info text-info @else bgl-danger text-danger @endif">
-                                            {{ $membro->nome[0] }}{{ last(explode(' ', $membro->nome))[0] }}
-                                        </span>
-                                    @endif
-                                    <div class="media-body ms-3">
-                                        <h6>{{ $membro->nome }}</h6>
-                                        <span>
-                                            {{ \Carbon\Carbon::parse($membro->nascimento)->diffInYears(\Carbon\Carbon::now()) }}
-                                            {{ \Illuminate\Support\Str::plural('ano', \Carbon\Carbon::parse($membro->nascimento)->diffInYears(\Carbon\Carbon::now())) }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <a title="{{ ucfirst($membro->observacao) }}">
-                                    <p style="width: 100%; max-width: 550px;"
-                                       class="ellipsis-2">{{ ucfirst($membro->observacao) }}</p>
-                                </a>
+                                @livewire('lideranca.refukids.card-crianca', ['turma' => $turma, 'turmaChamada' => $turmaChamada, 'membro' => $membro], key($membro->id))
                             </td>
                         </tr>
                     @endforeach

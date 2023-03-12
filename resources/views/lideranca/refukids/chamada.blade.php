@@ -11,10 +11,6 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                @livewire('lideranca.turma.chamada', ['turma' => $turma])
-            </div>
-        </div>
+        @livewire('lideranca.turma.chamada', ['turma' => $turma])
     </div>
 @endsection

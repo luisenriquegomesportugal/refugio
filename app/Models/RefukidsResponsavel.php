@@ -12,13 +12,16 @@ class RefukidsResponsavel extends Membro
 
         static::addGlobalScope(function (Builder $query) {
             $query->distinct()
-                ->selectRaw('membros.*')
-                ->join('refukids', 'refukids.responsavel_id', '=', 'membros.id');
+                ->whereExists(function(Builder $exists) {
+                    $exists->selectRaw('1')
+                        ->from('refukids as rce')
+                        ->whereRaw('rce.responsavel_id = membros.id');
+                });
         });
     }
 
     public function crianca()
     {
-        return $this->belongsToMany(RefukidsCrianca::class, "refukids", "responsavel_id", "crianca_id", "membro_id", "membro_id");
+        return $this->belongsToMany(RefukidsCrianca::class, "refukids", "responsavel_id", "crianca_id", "id", "id");
     }
 }

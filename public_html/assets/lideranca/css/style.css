@@ -26680,14 +26680,13 @@ table.dataTable.display tbody td {
       .card-tabs .nav-tabs.style-3 .nav-link.active:after {
         width: 100%; }
 
-.project-list-group .card {
-  margin-bottom: 17px;
-  border: 1px solid;
-  border-style: dashed;
-  border-width: 2px;
-  border-color: transparent; }
-  .project-list-group .card:hover {
-    border-color: #cccccc; }
+.project-media.list img, .project-media.list span {
+    border: 3px solid white;
+}
+
+.project-media.list img:not(:first-child), .project-media.list span:not(:first-child) {
+    margin-left: -20px;
+}
 
 .project-media img {
   height: 48px;
@@ -26709,7 +26708,7 @@ table.dataTable.display tbody td {
   display: inline-block; }
 
 .project-info {
-  padding: 5px 15px;
+  padding: 15px;
   flex-flow: wrap;
   display: flex;
   align-items: center; }
@@ -26720,7 +26719,7 @@ table.dataTable.display tbody td {
         font-size: 15px; } }
   @media only screen and (max-width: 575px) {
     .project-info {
-      padding: 10px 0px; } }
+      padding: 10px; } }
 
 .project-nav {
   margin-bottom: 30px;
@@ -26761,7 +26760,7 @@ table.dataTable.display tbody td {
     line-height: 44px; } }
 
 .project-status {
-  justify-content: space-between; }
+  justify-content: flex-end; }
 
 .project-card .dz-media {
   height: 80px;

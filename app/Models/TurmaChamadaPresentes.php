@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class TurmaChamadaPresentes extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     protected $table = "turma_chamada_presentes";
     protected $fillable = ["turma_chamada_id", "membro_id"];
