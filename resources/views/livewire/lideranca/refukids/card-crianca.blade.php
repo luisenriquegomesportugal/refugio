@@ -1,7 +1,7 @@
 <div class="card m-0">
     <div class="project-info">
         <div class="col-lg-3 col-12 order-0 order-lg-0">
-            <div class="d-flex align-items-center">
+            <div class="d-flex flex-row-reverse flex-sm-row align-items-center">
                 <div class="project-media">
                     @if($membro->foto)
                         <img src="{{ route('download', ['file' => $membro->foto]) }}"
