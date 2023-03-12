@@ -1,8 +1,8 @@
 <div class="card m-0">
-    <div class="project-info">
+    <div class="project-info gap-3">
         <div class="col-lg-3 col-sm-9 col-12 order-0 order-lg-0">
             <div class="d-flex flex-row-reverse flex-sm-row align-items-start">
-                <div class="project-media me-2 me-sm-0">
+                <div class="project-media">
                     @if($membro->foto)
                         <img src="{{ route('download', ['file' => $membro->foto]) }}"
                              class="object-fit-cover" alt="">
@@ -12,7 +12,7 @@
                         </span>
                     @endif
                 </div>
-                <div class="ms-0 ms-sm-2 flex-grow-1">
+                <div class="flex-grow-1">
                     <h5 class="mb-1 font-w500 text-black ellipsis-2">{{ $membro->nome }}</h5>
                     <span class="d-block">{{ $membro->sexo === 'M' ? 'Masculino' : 'Feminino' }}</span>
                     <span class="d-block">
@@ -22,9 +22,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-sm-6 col-12 order-2 order-lg-1 mt-4 mt-lg-0">
+        <div class="col-lg-4 col-sm-6 col-12 order-2 order-lg-1">
             <div class="d-flex align-items-start">
-                <div class="project-media list d-none d-sm-inline-flex order-1 order-sm-0 ms-0 ms-lg-2">
+                <div class="project-media list d-none d-sm-inline-flex order-1 order-sm-0">
                     @foreach(\App\Models\RefukidsCrianca::find($membro->id)->responsaveis as $responsavel)
                         @if($responsavel->foto)
                             <img src="{{ route('download', ['file' => $responsavel->foto]) }}" alt="" title="{{ $responsavel->nome }}">
@@ -35,7 +35,7 @@
                         @endif
                     @endforeach
                 </div>
-                <div class="ms-0 ms-sm-2 order-0 order-sm-1">
+                <div class="order-0 order-sm-1">
                     <h5 class="mb-1 font-w500 text-black">Responsáveis</h5>
                     <ul>
                         @foreach(\App\Models\RefukidsCrianca::find($membro->id)->responsaveis as $responsavel)
@@ -45,9 +45,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-sm-6 col-12 order-3 order-lg-2 mt-4 mt-lg-0">
+        <div class="col-lg-3 col-sm-6 col-12 order-3 order-lg-2">
             <div class="d-flex align-items-start">
-                <div class="ms-0 ms-sm-2">
+                <div>
                     <h5 class="mb-1 font-w500 text-black">Observações/Alergias</h5>
                     <span class="d-block ellipsis-2" title="{{ ucfirst($membro->observacao ?? '') }}">
                         @if($membro->observacao)
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-2 col-sm-3 col-12 align-items-start @if($colunaAcao) order-5 order-sm-1 @else order-1 @endif order-lg-3 mt-4 mt-sm-0">
+        <div class="col-lg-2 col-sm-3 col-12 align-items-start @if($colunaAcao) order-5 order-sm-1 @else order-1 @endif order-lg-3">
             <div class="d-flex project-status align-items-center justify-content-between justify-content-sm-end gap-3">
                 @if($colunaAcao)
                     @livewire($colunaAcao, ['turma' => $turma, 'turmaChamada' => $turmaChamada, 'membro' => $membro], key($membro->id))
