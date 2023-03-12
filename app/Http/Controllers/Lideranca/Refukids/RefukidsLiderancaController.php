@@ -21,7 +21,7 @@ class RefukidsLiderancaController extends Controller
      */
     public function pagina(Request $request)
     {
-        $refukids = RefukidsCrianca::paginate();
+        $refukids = RefukidsCrianca::orderBy('nome')->paginate();
 
         return view('lideranca.refukids.index', compact('refukids'));
     }
