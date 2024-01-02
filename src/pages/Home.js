@@ -48,7 +48,7 @@ export default function Home() {
             <a className="footer-logo" href="/">
               <img src="assets/images/favicon-light.png" alt="" style={{ height: "65px" }} />
             </a>
-            <p>Somos uma rede de células pertencente a Igreja do Evangelho Quadrangular - Sede do Pará, que funciona de modo organizo e relacional, objetivando despertar cada crente a fim de que possa desenvolver suas habilidades ministeriais e funcionar dentro do Reino.</p>
+            <p>Somos uma rede de células pertencente a Igreja do Evangelho Quadrangular - Sede do Pará, que funciona de modo orgânico e relacional, objetivando despertar cada crente a fim de que possa desenvolver suas habilidades ministeriais e funcionar dentro do Reino.</p>
           </div>
           <div className="col-md-6 col-lg-3 offset-lg-1">
             <h5 className="title">Galeria</h5>
